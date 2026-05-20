@@ -1,3 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YoyooBaker | Japan-Trained Artisan Cake · Halal · Setia Alam Klang</title>
+<meta name="description" content="Artisan Japanese-style cakes by a Japan-certified patissier. Halal certified, no preservatives, signature bean paste cream. Order online — same-day pickup & delivery, Setia Alam Klang.">
+
+<!-- ========================================================
+  SOCIAL SHARING (Open Graph) — paste your hero image URL below
+  This controls how your site looks when shared on WhatsApp/Facebook
+  ======================================================== -->
+<meta property="og:title" content="YoyooBaker | Japan-Trained Artisan Cake · Halal · Klang">
+<meta property="og:description" content="No fondant. No preservatives. Just real Japanese-inspired flavour. Halal certified. Setia Alam, Klang.">
+<meta property="og:image" content="https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184017/chatgpt-image-apr-4-2026-12-13-49-am-69cfe76e0679f_wn5jjk.png">
+<!-- ↑↑↑ REPLACE with your own best cake photo URL for WhatsApp preview -->
+<meta property="og:url" content="https://yoyoobaker.netlify.app">
+<!-- ↑↑↑ REPLACE with your real domain once live -->
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- ========================================================
+  GOOGLE ANALYTICS — uncomment and paste your GA4 tracking ID
+  Get it free at: analytics.google.com
+  ========================================================
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer=window.dataLayer||[];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());
+  gtag('config','G-XXXXXXXXXX');
+</script>
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   CSS VARIABLES — change colours here to restyle everything
+   ============================================================ */
+:root {
+  --cream:#faf7f2; --petal:#f5e6df; --blush:#e8c9bc;
+  --rose:#c97e6e;  --terra:#b5604a; --dark:#1e1a18;
+  --mid:#6b5c55;   --light:#9e8a82; --matcha:#6b8050;
+  --gold:#c8a96e;  --white:#fff;
+  --mothers:#8b3a6e; --mothers-light:#f5e6f0;
+  --event-color:#81D8D0; --event-light:#e0f7f5;
+  --fd:'Cormorant Garamond',serif; --fb:'Jost',sans-serif;
+}
+
+/* BASE */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--fb);background:var(--cream);color:var(--dark);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{text-decoration:none;color:inherit}
+
+/* ANNOUNCEMENT BAR */
+.ann{background:var(--terra);color:#fff;text-align:center;padding:9px 16px;font-size:11.5px;letter-spacing:.09em;font-weight:600;line-height:1.5}
+.ann-code{background:rgba(255,255,255,.2);padding:1px 8px;border-radius:2px;font-family:monospace;letter-spacing:.1em;margin:0 4px}
+.ann-sep{opacity:.4;margin:0 10px}
+
+/* STICKY HEADER WRAPPER — keeps event bar + nav always fully visible together */
+.header-wrap{position:sticky;top:0;z-index:200}
+
+/* EVENT BAR */
+.mbar{background:var(--event-color,#1e3a5f);padding:11px 5%;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.mbar-left{display:flex;align-items:center;gap:10px;flex:1;min-width:180px}
+.mbar-icon{font-size:20px;flex-shrink:0}
+.mbar-txt strong{display:block;font-size:12.5px;color:#fff;letter-spacing:.04em}
+.mbar-txt span{font-size:11px;color:rgba(255,255,255,.7)}
+.mbar-timer{display:flex;gap:6px;flex-shrink:0}
+.tu{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);padding:5px 10px;text-align:center;border-radius:3px;min-width:46px}
+.tu-n{font-family:var(--fd);font-size:20px;font-weight:600;display:block;line-height:1;color:#fff}
+.tu-l{font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.mbar-btn{background:#fff;color:var(--event-color);padding:9px 18px;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;white-space:nowrap;transition:all .2s;font-family:var(--fb);flex-shrink:0}
+.mbar-btn:hover{background:var(--event-light);transform:scale(1.03)}
+
+/* NAV */
+nav{background:rgba(250,247,242,.97);border-bottom:1px solid rgba(181,96,74,.12);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:66px;backdrop-filter:blur(12px);}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:var(--mid);font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;transition:color .2s;padding:4px 0}
+.nav-links a:hover{color:var(--terra)}
+.logo-wrap{text-align:center;display:flex;align-items:center;gap:10px;cursor:pointer}
+/* Logo image area */
+.logo-img-area{position:relative;width:44px;height:44px;flex-shrink:0}
+.logo-img-area img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--blush)}
+.logo-img-area .logo-placeholder{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--petal),var(--blush));display:flex;align-items:center;justify-content:center;font-size:22px;border:2px solid var(--blush)}
+.logo-text{text-align:left}
+.logo-name{font-family:var(--fd);font-size:19px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--dark);display:block;line-height:1.15}
+.logo-jp{font-size:9.5px;color:var(--light);letter-spacing:.08em}
+.nav-right{display:flex;align-items:center;gap:14px}
+.nav-right a{color:var(--mid);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;transition:color .2s}
+.nav-right a:hover{color:var(--terra)}
+.btn-nav{background:var(--terra)!important;color:#fff!important;padding:8px 16px;border-radius:2px;font-size:11px!important}
+.btn-nav:hover{background:var(--rose)!important}
+/* mobile hamburger */
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--dark);border-radius:2px;transition:all .3s}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--cream);z-index:300;padding:80px 5% 40px;flex-direction:column;gap:6px}
+.mobile-menu.open{display:flex}
+.mm-link{font-size:22px;font-family:var(--fd);color:var(--dark);padding:14px 0;border-bottom:1px solid var(--petal);display:block}
+.mm-close{position:absolute;top:20px;right:20px;font-size:28px;background:none;border:none;cursor:pointer;color:var(--dark)}
+.mm-cta{margin-top:24px;background:var(--terra);color:#fff;padding:16px;text-align:center;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:3px;display:block}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh;overflow:hidden}
+.hero-img{position:relative;overflow:hidden}
+.hero-img-bg{position:absolute;inset:0;background:linear-gradient(145deg,#3d5229,#8a9e6a)}
+.hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(20,16,14,.4) 0%,transparent 55%),linear-gradient(to top,rgba(20,16,14,.65) 0%,transparent 45%)}
+.season-pill{position:absolute;top:28px;left:28px;background:rgba(255,255,255,.13);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.28);color:#fff;padding:7px 14px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;z-index:2;border-radius:2px}
+.hero-cap{position:absolute;bottom:28px;left:28px;z-index:2;color:#fff}
+.hero-cap h3{font-family:var(--fd);font-size:24px;font-weight:400;line-height:1.2;margin-bottom:4px}
+.hero-cap span{font-size:10.5px;opacity:.55;letter-spacing:.14em;text-transform:uppercase;font-family:var(--fd);font-style:italic}
+.stock-pill{position:absolute;bottom:28px;right:20px;background:#e84040;color:#fff;padding:6px 12px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;z-index:2;border-radius:2px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.7}}
+.hero-content{display:flex;flex-direction:column;justify-content:center;padding:70px 7% 70px 6%;background:var(--cream)}
+.h-eye{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:10px;opacity:0;animation:fadeUp .6s .1s forwards}
+.h-eye::after{content:'';width:32px;height:1px;background:var(--terra)}
+.h-title{font-family:var(--fd);font-size:clamp(34px,4vw,58px);font-weight:400;line-height:1.08;color:var(--dark);margin-bottom:10px;opacity:0;animation:fadeUp .6s .22s forwards}
+.h-title em{font-style:italic;color:var(--matcha)}
+.h-sub{font-family:var(--fd);font-size:clamp(15px,2vw,21px);font-weight:300;color:var(--mid);margin-bottom:20px;opacity:0;animation:fadeUp .6s .34s forwards}
+.h-desc{font-size:13.5px;line-height:1.85;color:var(--mid);max-width:390px;margin-bottom:14px;opacity:0;animation:fadeUp .6s .44s forwards}
+.h-desc strong{color:var(--dark);font-weight:600}
+.promo-badge{background:linear-gradient(135deg,var(--terra),var(--rose));color:#fff;padding:11px 16px;margin-bottom:28px;border-radius:3px;display:inline-flex;align-items:center;gap:10px;opacity:0;animation:fadeUp .6s .52s forwards;max-width:380px}
+.pb-icon{font-size:17px;flex-shrink:0}
+.pb-text{font-size:11.5px;line-height:1.4}
+.pb-text strong{display:block;font-size:12.5px}
+.pb-code{background:rgba(255,255,255,.22);padding:1px 7px;border-radius:2px;font-size:11.5px;font-weight:700;letter-spacing:.1em;font-family:monospace}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap;opacity:0;animation:fadeUp .6s .6s forwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* BUTTONS */
+.btn{display:inline-block;font-family:var(--fb);cursor:pointer;border:none;transition:all .25s;border-radius:2px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none}
+.btn-primary{background:var(--terra);color:#fff;padding:13px 28px;font-size:12px}
+.btn-primary:hover{background:var(--rose);transform:translateY(-2px);box-shadow:0 8px 24px rgba(181,96,74,.3)}
+.btn-outline{background:transparent;color:var(--dark);padding:12px 28px;font-size:12px;border:1.5px solid currentColor}
+.btn-outline:hover{background:var(--dark);color:#fff;transform:translateY(-2px)}
+.btn-white{background:#fff;color:var(--dark);padding:13px 28px;font-size:12px}
+.btn-white:hover{background:var(--petal);transform:translateY(-2px)}
+.btn-mothers{background:#fff;color:var(--mothers);padding:13px 28px;font-size:12px;font-weight:700}
+.btn-mothers:hover{background:var(--mothers-light);transform:translateY(-2px)}
+.btn-matcha{background:var(--matcha);color:#fff;padding:13px 28px;font-size:12px}
+.btn-matcha:hover{filter:brightness(1.1);transform:translateY(-2px)}
+
+/* TRUST STRIP */
+.trust{background:var(--dark);display:grid;grid-template-columns:repeat(4,1fr)}
+.ti{padding:24px 22px;border-right:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:13px;transition:background .2s}
+.ti:last-child{border-right:none}
+.ti:hover{background:rgba(255,255,255,.04)}
+.ti-icon{font-size:24px;flex-shrink:0}
+.ti-lbl{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:2px;font-weight:600}
+.ti-desc{font-size:11.5px;color:rgba(255,255,255,.48);line-height:1.4;font-family:var(--fd);font-style:italic}
+
+/* SECTION HEADER */
+.sh{text-align:center;margin-bottom:50px}
+.sh.left{text-align:left}
+.sh-eye{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);font-weight:600;margin-bottom:11px}
+.sh-title{font-family:var(--fd);font-size:clamp(28px,3.5vw,46px);font-weight:400;color:var(--dark);line-height:1.15}
+.sh-title em{font-style:italic;color:var(--rose)}
+.sh-line{width:42px;height:2px;background:linear-gradient(90deg,var(--terra),var(--blush));margin:16px auto 0}
+.sh.left .sh-line{margin:16px 0 0}
+
+/* EVENT SECTION */
+.mothers{padding:72px 5%;background:linear-gradient(135deg,#5cc4bc,#81D8D0,#a8e6e0);position:relative;overflow:hidden}
+.mothers::before{content:'父の日';position:absolute;right:-40px;top:50%;transform:translateY(-50%);font-size:160px;color:rgba(255,255,255,.04);font-family:var(--fd);white-space:nowrap;user-select:none}
+.mothers-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;position:relative;z-index:1}
+.mothers-content{color:#fff}
+.m-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);padding:5px 14px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;margin-bottom:18px;border-radius:2px}
+.mothers-title{font-family:var(--fd);font-size:clamp(30px,3.8vw,48px);font-weight:400;line-height:1.1;margin-bottom:14px}
+.mothers-title em{font-style:italic;opacity:.72}
+.mothers-body{font-size:13.5px;line-height:1.8;color:rgba(255,255,255,.72);margin-bottom:8px}
+.m-urgency{background:rgba(255,255,255,.1);border-left:3px solid rgba(255,255,255,.45);padding:11px 15px;margin:18px 0;font-size:12.5px;color:rgba(255,255,255,.82);border-radius:0 2px 2px 0}
+.m-urgency strong{color:#fff;display:block;margin-bottom:2px;font-size:13px}
+.mothers-products{display:flex;flex-direction:column;gap:13px}
+.m-prod{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);padding:18px;border-radius:3px;transition:all .25s;display:block}
+.m-prod:hover{background:rgba(255,255,255,.18);transform:translateX(4px)}
+.m-prod-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:5px}
+.m-prod-name{color:#fff;font-size:13.5px;font-weight:600;letter-spacing:.04em}
+.m-prod-price{color:#fff;font-size:13.5px;font-family:var(--fd);white-space:nowrap}
+.m-prod-price s{opacity:.45;font-size:11.5px;margin-right:3px}
+.m-prod-desc{color:rgba(255,255,255,.52);font-size:12px;line-height:1.5;font-family:var(--fd);font-style:italic}
+.m-save{display:inline-block;background:var(--gold);color:var(--dark);padding:2px 8px;font-size:9.5px;font-weight:700;letter-spacing:.08em;border-radius:2px;margin-bottom:5px}
+
+/* CATEGORIES */
+.cats{padding:72px 5%;background:var(--cream)}
+.cats-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.cat{position:relative;overflow:hidden;border-radius:4px;cursor:pointer;display:block;aspect-ratio:3/4;transition:transform .35s cubic-bezier(.25,.46,.45,.94)}
+.cat:hover{transform:translateY(-6px)}
+.cat:hover .cat-img img{transform:scale(1.07)}
+.cat:hover .cat-ov{opacity:1}
+.cat-img{position:absolute;inset:0;overflow:hidden}
+.cat-img img{transition:transform .5s ease}
+.cat-img-bg{position:absolute;inset:0}
+.cat-ov{position:absolute;inset:0;background:rgba(20,16,14,.2);opacity:0;transition:opacity .3s;z-index:2}
+.cat-lbl{position:absolute;bottom:0;left:0;right:0;padding:26px 12px 14px;background:linear-gradient(0deg,rgba(18,14,12,.9),transparent);z-index:3}
+.cat-name{color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:2px}
+.cat-from{color:rgba(255,255,255,.48);font-size:10.5px;font-family:var(--fd);font-style:italic}
+.cat-badge{position:absolute;top:10px;right:10px;background:var(--terra);color:#fff;padding:3px 7px;font-size:9px;font-weight:700;letter-spacing:.1em;z-index:4;border-radius:2px}
+.cat-badge.green{background:var(--matcha)}
+
+/* CHAPTER HEADERS */
+.chapter{padding:20px 5% 0;background:var(--petal)}
+.chapter-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--blush);flex-wrap:wrap;gap:12px}
+.chapter-left{}
+.chapter-icon{font-size:28px;display:block;margin-bottom:6px}
+.chapter-name{font-family:var(--fd);font-size:clamp(26px,3vw,38px);font-weight:400;color:var(--dark);display:block;line-height:1.1}
+.chapter-name em{font-style:italic;color:var(--rose)}
+.chapter-mood{font-size:13px;color:var(--mid);font-family:var(--fd);font-style:italic;margin-top:4px;display:block;max-width:480px;line-height:1.6}
+.chapter-count{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--light);font-weight:600}
+.chapter-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding-bottom:48px}
+
+/* COMING SOON CARD */
+.pc-soon{background:#fff;overflow:hidden;border-radius:4px;opacity:.75;position:relative}
+.pc-soon-img{aspect-ratio:4/3;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.pc-soon-blur{position:absolute;inset:0;filter:blur(0px)}
+.pc-soon-tag{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(250,247,242,.88);gap:6px;z-index:2}
+.pc-soon-tag span{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--mid)}
+.pc-soon-tag strong{font-family:var(--fd);font-size:15px;color:var(--dark);font-style:italic}
+
+/* SECTION DIVIDER between chapters */
+.chapter-divider{height:1px;background:linear-gradient(90deg,transparent,var(--blush),transparent);margin:0 5%}
+
+/* CAROUSEL */
+.chapter-grid{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:0 0 16px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.chapter-grid::-webkit-scrollbar{display:none}
+.chapter-grid .pc,.chapter-grid .pc-soon{flex:0 0 238px;scroll-snap-align:start}
+.c-nav{display:flex;gap:8px;justify-content:flex-end;margin-bottom:10px}
+.c-btn{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--blush);background:white;cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;transition:all .2s;color:var(--mid);font-family:var(--fb)}
+.c-btn:hover{background:var(--terra);color:white;border-color:var(--terra)}
+.btn-detail{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--light);border:none;border-bottom:1px solid var(--blush);padding:0 0 1px;transition:all .2s;font-weight:500;cursor:pointer;background:none;font-family:var(--fb);display:inline-block}
+.btn-detail:hover{color:var(--mid);border-color:var(--mid)}
+/* DETAIL MODAL */
+.detail-overlay{position:fixed;inset:0;background:rgba(20,16,14,.78);z-index:1000;display:none;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(4px)}
+.detail-overlay.active{display:flex}
+.detail-modal{background:#fff;width:100%;max-width:500px;border-radius:6px;overflow:hidden;box-shadow:0 24px 80px rgba(20,16,14,.35);max-height:92vh;overflow-y:auto}
+.dm-img{height:200px;position:relative;overflow:hidden}
+.dm-img img{width:100%;height:100%;object-fit:cover}
+.dm-img-bg{position:absolute;inset:0}
+.dm-close-btn{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.9);border:none;width:30px;height:30px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--mid);z-index:2}
+.dm-status-badge{position:absolute;bottom:12px;left:12px;padding:3px 9px;font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:2px;z-index:2;color:#fff}
+.dm-body{padding:20px}
+.dm-chapter{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);font-weight:600;margin-bottom:5px}
+.dm-name{font-family:var(--fd);font-size:21px;font-weight:500;color:var(--dark);margin-bottom:10px;line-height:1.2}
+.dm-desc{font-size:13px;line-height:1.85;color:var(--mid);margin-bottom:16px;font-family:var(--fd);font-style:italic}
+.dm-footer{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--petal);flex-wrap:wrap;gap:10px}
+.dm-price{font-size:20px;font-weight:700;color:var(--terra);font-family:var(--fd);display:block}
+.dm-price-note{font-size:11px;color:var(--light);font-family:var(--fd);font-style:italic}
+.dm-actions{display:flex;align-items:center;gap:8px}
+.dm-qty-wrap{display:flex;align-items:center;gap:6px;background:var(--petal);padding:5px 12px;border-radius:20px}
+.dm-qty-btn{width:22px;height:22px;border-radius:50%;border:none;background:transparent;cursor:pointer;font-size:16px;color:var(--terra);font-weight:700;line-height:1;padding:0;display:flex;align-items:center;justify-content:center}
+.dm-qty-val{font-size:14px;font-weight:700;color:var(--dark);min-width:18px;text-align:center}
+.dm-order-btn{background:var(--terra);color:#fff;border:none;padding:11px 20px;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:2px;font-family:var(--fb);transition:all .25s}
+.dm-order-btn:hover{background:var(--rose)}
+.dm-order-btn:disabled{background:var(--light);cursor:not-allowed}
+
+@media(max-width:1024px){.chapter-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:768px){.chapter-grid{grid-template-columns:repeat(2,1fr);gap:12px}.chapter-header{flex-direction:column;align-items:flex-start}}
+.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:36px}
+.pc{background:#fff;overflow:hidden;border-radius:4px;display:block;transition:transform .3s,box-shadow .3s}
+.pc:hover{transform:translateY(-6px);box-shadow:0 18px 48px rgba(20,16,14,.12)}
+.pc-img{aspect-ratio:4/3;position:relative;overflow:hidden}
+.pc-img img{transition:transform .5s ease}
+.pc:hover .pc-img img{transform:scale(1.07)}
+.pc-img-bg{position:absolute;inset:0}
+.pc-badges{position:absolute;top:10px;left:10px;display:flex;flex-direction:column;gap:4px;z-index:2}
+.badge{padding:3px 8px;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:2px}
+.b-hot{background:var(--terra);color:#fff}
+.b-season{background:var(--matcha);color:#fff}
+.b-new{background:var(--gold);color:var(--dark)}
+.b-low{background:#e84040;color:#fff;animation:pulse 2s infinite}
+.pc-info{padding:16px}
+.pc-name{font-family:var(--fd);font-size:16px;font-weight:500;color:var(--dark);margin-bottom:3px}
+.pc-sub{font-size:11px;color:var(--light);margin-bottom:12px;font-style:italic;font-family:var(--fd)}
+.pc-foot{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.pc-prices{display:flex;align-items:baseline;gap:5px}
+.pc-price{font-size:14.5px;font-weight:700;color:var(--terra)}
+.pc-old{font-size:11.5px;color:var(--light);text-decoration:line-through}
+.pc-cta{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--light);border-bottom:1px solid var(--blush);padding-bottom:1px;transition:all .2s;font-weight:500}
+.pc-cta:hover{color:var(--terra);border-color:var(--terra)}
+
+/* BUNDLES */
+.bundles{padding:0 5% 72px;background:var(--petal)}
+.bstrip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.bc{background:#fff;border:2px solid var(--blush);padding:26px 22px;border-radius:4px;position:relative;transition:border-color .2s,transform .2s;cursor:default}
+.bc:hover{border-color:var(--terra);transform:translateY(-3px)}
+.bc.feat{border-color:var(--terra);background:linear-gradient(135deg,rgba(181,96,74,.04),rgba(232,201,188,.08))}
+.bc-tag{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--terra);color:#fff;padding:3px 14px;font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;border-radius:2px}
+.bc-icon{font-size:28px;margin-bottom:10px;display:block}
+.bc-name{font-family:var(--fd);font-size:17px;font-weight:500;color:var(--dark);margin-bottom:5px}
+.bc-desc{font-size:12px;color:var(--mid);line-height:1.6;margin-bottom:14px}
+.bc-save{font-size:12px;font-weight:700;color:var(--terra);margin-bottom:14px;display:flex;align-items:center;gap:5px}
+.bc-save::before{content:'✦';font-size:10px}
+.bc-link{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--terra);border-bottom:1px solid var(--blush);padding-bottom:1px}
+
+/* SEASONAL */
+.seasonal{padding:72px 5%;background:linear-gradient(135deg,#2d3f1e,#4a6030,#5a7a40,#3d5229);position:relative;overflow:hidden}
+.seasonal::before{content:'抹茶';position:absolute;right:-30px;top:-60px;font-size:220px;color:rgba(255,255,255,.03);font-family:var(--fd);user-select:none;line-height:1}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center;position:relative;z-index:1}
+.s-tag{display:inline-block;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.23);color:rgba(255,255,255,.88);padding:5px 13px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;margin-bottom:16px;border-radius:2px}
+.seasonal-title{font-family:var(--fd);font-size:clamp(30px,3.8vw,48px);font-weight:400;line-height:1.1;color:#fff;margin-bottom:14px}
+.seasonal-title em{font-style:italic;opacity:.65}
+.s-body{font-size:13.5px;line-height:1.8;color:rgba(255,255,255,.62);margin-bottom:8px}
+.s-close{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:28px;font-family:var(--fd);font-style:italic}
+.sitems{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.si{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);padding:18px 16px;border-radius:4px;display:block;transition:all .25s}
+.si:hover{background:rgba(255,255,255,.16);transform:translateY(-3px)}
+.si-icon{font-size:22px;margin-bottom:7px}
+.si-name{font-size:12.5px;font-weight:600;color:#fff;margin-bottom:3px;letter-spacing:.04em}
+.si-price{font-size:11px;color:rgba(255,255,255,.52);font-family:var(--fd);font-style:italic}
+
+/* LIBRARY */
+.library{padding:72px 5%;background:var(--dark);text-align:center;position:relative;overflow:hidden}
+.library::before{content:'?';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--fd);font-size:380px;color:rgba(255,255,255,.02);user-select:none;pointer-events:none;line-height:1}
+.lib-body{font-family:var(--fd);font-size:16px;font-weight:300;font-style:italic;line-height:1.9;color:rgba(255,255,255,.5);max-width:520px;margin:0 auto 36px}
+.litems{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:36px;position:relative;z-index:1}
+.li{border:1px solid rgba(255,255,255,.1);padding:22px 18px;border-radius:4px;text-align:left;transition:border-color .2s,background .2s;cursor:pointer}
+.li:hover{border-color:rgba(200,169,110,.35);background:rgba(255,255,255,.03)}
+.li-status{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:9px;display:flex;align-items:center;gap:5px}
+.li-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.li-name{font-family:var(--fd);font-size:16px;font-weight:400;color:#fff;margin-bottom:5px}
+.li-season{font-size:11px;color:rgba(255,255,255,.37);font-family:var(--fd);font-style:italic}
+.li.mystery{border-style:dashed;border-color:rgba(200,169,110,.28);display:flex;align-items:center;justify-content:center;min-height:120px}
+
+/* TESTIMONIALS */
+.testi{padding:72px 5%;background:var(--cream)}
+.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.review{background:#fff;padding:22px 20px;border-radius:8px;box-shadow:0 2px 12px rgba(30,26,24,.07);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;gap:0}
+.review:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(30,26,24,.12)}
+/* Google-style header */
+.rv-header{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.rv-av{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#fff;flex-shrink:0;letter-spacing:.04em}
+.rv-meta{flex:1}
+.rv-name{font-size:13px;font-weight:700;color:var(--dark);display:block;margin-bottom:1px}
+.rv-date{font-size:11px;color:var(--light)}
+.rv-source{width:14px;height:14px;flex-shrink:0;opacity:.4}
+/* Stars row */
+.rv-stars{display:flex;align-items:center;gap:6px;margin-bottom:10px}
+.rv-stars-icons{color:#f59e0b;font-size:12px;letter-spacing:2px}
+.rv-via{font-size:9.5px;color:var(--light);letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+/* Review text */
+.rv-text{font-size:13px;line-height:1.75;color:var(--mid);margin-bottom:12px;flex:1}
+.rv-text .rv-highlight{color:var(--terra);font-weight:600}
+/* Product photo strip */
+.rv-photos{display:flex;gap:8px;margin-top:auto}
+.rv-photo{width:64px;height:64px;border-radius:6px;overflow:hidden;flex-shrink:0;position:relative}
+.rv-photo img{width:100%;height:100%;object-fit:cover}
+.rv-photo-bg{position:absolute;inset:0}
+/* Verified badge */
+.rv-verified{display:inline-flex;align-items:center;gap:4px;font-size:10px;color:var(--matcha);font-weight:600;letter-spacing:.06em;margin-top:10px;padding-top:10px;border-top:1px solid var(--petal)}
+
+/* LOYALTY */
+.loyalty{padding:66px 5%;background:var(--petal);text-align:center}
+.stamps{display:flex;justify-content:center;align-items:center;gap:8px;margin:28px 0 14px;flex-wrap:wrap}
+.stamp{width:52px;height:52px;border-radius:50%;border:2px solid var(--blush);display:flex;align-items:center;justify-content:center;font-size:20px}
+.stamp.filled{background:var(--terra);border-color:var(--terra);color:#fff;box-shadow:0 4px 14px rgba(181,96,74,.32)}
+.stamp.next{border:2px dashed var(--terra);color:var(--terra);font-size:12.5px;font-weight:700;animation:pulse 2s infinite}
+.st-arrow{color:var(--blush);font-size:16px;margin:0 2px}
+.st-reward{background:var(--dark);color:#fff;border-radius:50%;width:52px;height:52px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;line-height:1.2}
+.loyalty-note{font-size:12.5px;color:var(--mid);font-family:var(--fd);font-style:italic;margin-bottom:26px;max-width:480px;margin-left:auto;margin-right:auto}
+
+/* WORKSHOP */
+.workshop{padding:72px 5%;background:var(--cream)}
+.wg{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start}
+.w-main{aspect-ratio:16/10;border-radius:4px;overflow:hidden;position:relative;margin-bottom:12px}
+.w-main img,.w-sm img{width:100%;height:100%;object-fit:cover}
+.w-main-bg{position:absolute;inset:0;background:linear-gradient(145deg,#f0ebe6,#e0d5cc)}
+.w-subs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.w-sm{aspect-ratio:1;border-radius:4px;overflow:hidden;position:relative}
+.w-sm-bg1{position:absolute;inset:0;background:linear-gradient(145deg,#ede8e4,#ddd3cc)}
+.w-sm-bg2{position:absolute;inset:0;background:linear-gradient(145deg,#e8ede4,#d0dcc8)}
+.wcards{display:flex;flex-direction:column;gap:13px;margin:26px 0 32px}
+.wcard{background:var(--petal);padding:16px 18px;border-left:3px solid var(--blush);transition:border-color .2s,transform .2s}
+.wcard:hover{border-color:var(--terra);transform:translateX(4px)}
+.wcard h4{font-size:13px;font-weight:600;color:var(--dark);margin-bottom:3px;letter-spacing:.05em}
+.wcard p{font-size:12px;color:var(--light);line-height:1.5}
+.wcard-meta{font-size:10.5px;color:var(--terra);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
+
+/* STORY */
+/* old .story layout removed — teaser uses inline styles */
+/* orphan removed */
+.story-img{width:100%;aspect-ratio:4/5;border-radius:4px;overflow:hidden;position:relative;box-shadow:22px 22px 56px rgba(181,96,74,.13)}
+.story-img img{width:100%;height:100%;object-fit:cover}
+/* old story-img-bg removed */
+.story-badge{position:absolute;bottom:-18px;left:-18px;background:var(--dark);color:#fff;padding:16px 18px;width:140px}
+.s-num{font-family:var(--fd);font-size:32px;font-weight:300;line-height:1;display:block}
+.s-lbl{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin-top:4px}
+.story-deco{position:absolute;top:-14px;right:-14px;width:82px;height:82px;border:2px solid var(--blush);border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--petal);font-size:26px}
+.creds{display:flex;flex-direction:column;gap:8px;margin:22px 0 28px}
+.cred{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--mid);font-family:var(--fd);font-style:italic}
+.cred-dot{width:6px;height:6px;background:var(--terra);border-radius:50%;flex-shrink:0}
+.s-body{font-size:13.5px;line-height:1.9;color:var(--mid);margin-bottom:14px}
+.s-body strong{color:var(--dark);font-weight:600}
+
+/* FOOTER */
+footer{background:var(--dark);color:rgba(255,255,255,.52);padding:52px 5% 28px}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+.f-name{font-family:var(--fd);font-size:20px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#fff;margin-bottom:3px}
+.f-jp{font-size:10px;color:rgba(255,255,255,.28);margin-bottom:16px;letter-spacing:.08em}
+.f-about{font-size:12px;line-height:1.75;color:rgba(255,255,255,.4);margin-bottom:18px;max-width:250px}
+.f-soc{display:flex;gap:9px}
+.f-si{width:33px;height:33px;border:1px solid rgba(255,255,255,.16);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.45);text-decoration:none;font-size:13px;transition:all .2s}
+.f-si:hover{border-color:var(--rose);color:var(--rose)}
+.fc h4{color:#fff;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;margin-bottom:14px}
+.fl{list-style:none;display:flex;flex-direction:column;gap:9px}
+.fl a{color:rgba(255,255,255,.38);font-size:12px;transition:color .2s;font-family:var(--fd);font-style:italic}
+.fl a:hover{color:#fff}
+.f-addr{font-size:11.5px;line-height:1.85;color:rgba(255,255,255,.38)}
+.f-addr strong{color:rgba(255,255,255,.68);font-size:11px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:4px;font-style:normal;font-family:var(--fb)}
+.f-bot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.f-copy{font-size:11px;color:rgba(255,255,255,.22)}
+.fpays{display:flex;gap:6px;flex-wrap:wrap}
+.fp{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.35);padding:3px 8px;font-size:9px;letter-spacing:.08em;border-radius:2px;font-weight:600}
+
+/* WHATSAPP FLOATING BUTTON */
+.wa-btn{
+  position:fixed;bottom:24px;right:24px;z-index:999;
+  background:#25d366;color:#fff;
+  width:58px;height:58px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;text-decoration:none;
+  box-shadow:0 6px 24px rgba(37,211,102,.4);
+  transition:all .3s;
+}
+.wa-btn:hover{transform:scale(1.1) translateY(-3px);box-shadow:0 10px 32px rgba(37,211,102,.5)}
+.wa-tooltip{
+  position:absolute;right:68px;top:50%;transform:translateY(-50%);
+  background:var(--dark);color:#fff;padding:8px 14px;border-radius:4px;
+  font-size:12px;font-weight:600;white-space:nowrap;letter-spacing:.04em;
+  opacity:0;pointer-events:none;transition:opacity .2s;
+}
+.wa-tooltip::after{content:'';position:absolute;left:100%;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:var(--dark)}
+.wa-btn:hover .wa-tooltip{opacity:1}
+
+/* MOBILE BOTTOM BAR */
+.mobile-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:500;background:#fff;border-top:1px solid var(--petal);padding:12px 5%;flex-direction:column;gap:8px;box-shadow:0 -8px 24px rgba(20,16,14,.08)}
+.mcta-row{display:flex;gap:10px}
+.mcta-row .btn{flex:1;text-align:center;padding:13px;font-size:11px}
+
+/* ============================================================
+   3-STEP CHECKOUT PORTAL
+   ============================================================ */
+.co-overlay{position:fixed;inset:0;background:rgba(20,16,14,.78);z-index:1000;display:none;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(4px)}
+.co-overlay.active{display:flex}
+.co-modal{background:#fff;width:100%;max-width:540px;border-radius:6px;overflow:hidden;box-shadow:0 24px 80px rgba(20,16,14,.35);max-height:95vh;display:flex;flex-direction:column}
+.co-steps{display:flex;background:var(--dark)}
+.co-step{flex:1;padding:12px 8px;text-align:center;transition:background .3s}
+.co-step-num{width:22px;height:22px;border-radius:50%;border:1.5px solid rgba(255,255,255,.25);display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:rgba(255,255,255,.35);margin-bottom:3px}
+.co-step-lbl{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);display:block;font-weight:600}
+.co-step.active .co-step-num{background:var(--terra);border-color:var(--terra);color:#fff}
+.co-step.active .co-step-lbl{color:#fff}
+.co-step.done .co-step-num{background:var(--matcha);border-color:var(--matcha);color:#fff;font-size:12px}
+.co-step.done .co-step-lbl{color:rgba(255,255,255,.55)}
+.co-header{padding:18px 20px 0;position:relative}
+.co-close{position:absolute;top:14px;right:16px;background:var(--petal);border:none;width:30px;height:30px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--mid)}
+.co-close:hover{background:var(--blush);color:var(--dark)}
+.co-product-bar{display:grid;grid-template-columns:80px 1fr;gap:0;border:1px solid var(--petal);border-radius:4px;overflow:hidden;margin-bottom:20px}
+.co-pimg{height:75px;position:relative;overflow:hidden}
+.co-pimg img{width:100%;height:100%;object-fit:cover}
+.co-pimg-bg{position:absolute;inset:0}
+.co-pinfo{padding:10px 14px;background:var(--petal);display:flex;flex-direction:column;justify-content:center}
+.co-pname{font-family:var(--fd);font-size:15px;font-weight:500;color:var(--dark);display:block}
+.co-psub{font-size:10.5px;color:var(--light);font-family:var(--fd);font-style:italic;display:block;margin-top:2px}
+.co-pprice{font-size:14px;font-weight:700;color:var(--terra);display:block;margin-top:4px}
+.co-body{overflow-y:auto;flex:1;padding:0 20px 20px}
+.co-section{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin:18px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--petal)}
+.co-addon{background:var(--petal);border:1.5px solid var(--blush);border-radius:4px;padding:11px 14px;display:flex;align-items:center;gap:11px;cursor:pointer;transition:border-color .2s;margin-bottom:8px;width:100%;text-align:left}
+.co-addon:hover{border-color:var(--rose)}
+.co-addon.checked{border-color:var(--terra);background:rgba(181,96,74,.06)}
+.co-addon input[type=checkbox]{width:16px;height:16px;accent-color:var(--terra);cursor:pointer;flex-shrink:0}
+.co-addon-info{flex:1}
+.co-addon-label{font-size:12.5px;font-weight:600;color:var(--dark);display:block}
+.co-addon-sub{font-size:11px;color:var(--mid);font-family:var(--fd);font-style:italic}
+.co-addon-price{font-size:13px;font-weight:700;color:var(--terra);flex-shrink:0}
+.co-form{display:flex;flex-direction:column;gap:12px}
+.co-field label{font-size:10.5px;font-weight:600;color:var(--mid);letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:5px}
+.co-field input,.co-field textarea,.co-field select{width:100%;border:1.5px solid var(--blush);border-radius:3px;padding:10px 14px;font-size:13.5px;font-family:var(--fb);color:var(--dark);outline:none;transition:border-color .2s;background:#fafafa;box-sizing:border-box}
+.co-field input:focus,.co-field textarea:focus{border-color:var(--terra);background:#fff}
+.co-field textarea{resize:none;height:68px;line-height:1.5}
+.co-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.co-summary-box{background:var(--petal);border-radius:4px;padding:14px;margin-bottom:14px}
+.co-sum-row{display:flex;justify-content:space-between;padding:5px 0;font-size:12.5px;color:var(--mid);border-bottom:1px dotted rgba(181,96,74,.15)}
+.co-sum-row:last-child{border:none;padding-top:10px;font-size:14px;font-weight:700;color:var(--dark)}
+.co-sum-row:last-child span:last-child{color:var(--terra);font-size:15px}
+.co-how{border:1px solid var(--blush);border-radius:4px;padding:14px;margin-bottom:16px}
+.co-how-title{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);margin-bottom:10px}
+.co-how-step{display:flex;gap:10px;align-items:flex-start;margin-bottom:9px;font-size:12px;color:var(--mid);line-height:1.5}
+.co-how-step:last-child{margin-bottom:0}
+.co-how-num{width:18px;height:18px;border-radius:50%;background:var(--terra);color:#fff;font-size:9.5px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.co-how-step strong{color:var(--dark)}
+.co-btn-row{display:flex;gap:10px;margin-top:4px}
+.co-btn-back{flex:1;background:transparent;color:var(--mid);border:1.5px solid var(--blush);padding:13px;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:3px;font-family:var(--fb);transition:all .2s}
+.co-btn-back:hover{border-color:var(--mid);color:var(--dark)}
+.co-btn-next{flex:2;background:var(--terra);color:#fff;border:none;padding:13px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:3px;font-family:var(--fb);transition:all .2s}
+.co-btn-next:hover{background:var(--rose)}
+.co-btn-confirm{width:100%;background:var(--dark);color:#fff;border:none;padding:15px;font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:3px;font-family:var(--fb);transition:all .2s;display:flex;align-items:center;justify-content:center;gap:10px}
+.co-btn-confirm:hover{background:#000}
+.co-err{color:#c0392b;font-size:11.5px;font-weight:600;margin-top:-6px;display:none}
+.co-step-panel{display:none}
+.co-step-panel.active{display:block}
+
+@media(max-width:480px){
+  .co-row{grid-template-columns:1fr}
+  .co-modal{max-height:98vh}
+  .co-body{padding:0 14px 14px}
+  .co-header{padding:14px 14px 0}
+}
+@media (max-width:1024px){
+  .cats-grid{grid-template-columns:repeat(3,1fr)}
+  .pg{grid-template-columns:repeat(2,1fr)}
+  .fg{grid-template-columns:1fr 1fr;gap:32px}
+}
+
+@media (max-width:768px){
+  /* Sticky bars on mobile */
+  .mbar{padding:10px 4%;top:0}
+  .mbar-timer{display:none}
+  nav{top:56px;height:58px;padding:0 4%}
+  .nav-links,.nav-right a:not(.btn-nav){display:none}
+  .nav-right .btn-nav{display:flex;padding:7px 13px;font-size:10.5px}
+  .nav-toggle{display:flex}
+
+  /* HERO — stack on mobile */
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-img{height:55vw;position:relative}
+  .hero-img img,.hero-img-bg{position:absolute;inset:0}
+  .hero-content{padding:36px 5% 40px}
+  .h-title{font-size:clamp(30px,8vw,42px)}
+  .hero-btns{flex-direction:column}
+  .hero-btns .btn{width:100%;text-align:center;padding:15px}
+  .promo-badge{max-width:100%}
+
+  /* TRUST — 2 col on mobile */
+  .trust{grid-template-columns:1fr 1fr}
+  .ti{border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}
+  .ti:nth-child(odd){border-right:1px solid rgba(255,255,255,.08)}
+  .ti:nth-last-child(-n+2){border-bottom:none}
+
+  /* MOTHERS */
+  .mothers-grid{grid-template-columns:1fr;gap:28px}
+  .mothers::before{display:none}
+
+  /* CATS */
+  .cats-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+
+  /* PRODUCTS */
+  .pg{grid-template-columns:1fr 1fr;gap:12px}
+  .bstrip{grid-template-columns:1fr;gap:20px}
+  .bc-tag{white-space:nowrap;left:20px;transform:none}
+
+  /* SEASONAL */
+  .sg{grid-template-columns:1fr;gap:28px}
+  .seasonal::before{display:none}
+
+  /* LIBRARY */
+  .litems{grid-template-columns:1fr 1fr}
+
+  /* TESTIMONIALS */
+  .tg{grid-template-columns:1fr;gap:14px}
+
+  /* STAMPS */
+  .stamps{gap:6px}
+  .stamp,.st-reward{width:42px;height:42px;font-size:16px}
+
+  /* WORKSHOP */
+  .wg{grid-template-columns:1fr;gap:28px}
+  .w-subs{display:none}
+
+  /* STORY */
+  .story{grid-template-columns:1fr;gap:40px}
+  .story-badge{display:none}
+
+  /* FOOTER */
+  .fg{grid-template-columns:1fr;gap:28px}
+  .f-bot{flex-direction:column;align-items:flex-start;gap:14px}
+
+  /* MOBILE BOTTOM BAR */
+  .mobile-cta{display:flex}
+  body{padding-bottom:88px}
+
+  /* WA btn position on mobile */
+  .wa-btn{bottom:100px;right:16px;width:50px;height:50px;font-size:22px}
+  .wa-tooltip{display:none}
+}
+
+@media (max-width:480px){
+  .pg{grid-template-columns:1fr}
+  .litems{grid-template-columns:1fr}
+  .sitems{grid-template-columns:1fr}
+  .cats-grid{grid-template-columns:repeat(2,1fr)}
+  .ann{font-size:10.5px}
+  .mbar-txt span{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ====================================================
+  STICKY HEADER WRAPPER — fixes header showing halfway on scroll
+  ==================================================== -->
+<div class="header-wrap">
+
+<!-- ANNOUNCEMENT -->
+<div class="ann">
+  🌸 New here? Use code <span class="ann-code">HELLO10</span> for 10% off your first order
+  <span class="ann-sep">|</span>
+  Order by 9am — same-day pickup & delivery
+</div>
+
+<!-- ====================================================
+  FATHER'S DAY URGENT BAR (auto-switches to next event)
+  ==================================================== -->
+<div class="mbar">
+  <div class="mbar-left">
+    <span class="mbar-icon" id="evIcon">👨</span>
+    <div class="mbar-txt">
+      <strong id="evName">Father's Day — 21 June!</strong>
+      <span id="evSub">Order by Friday 19 June 9am for delivery · Saturday for pickup</span>
+    </div>
+  </div>
+  <div class="mbar-timer" id="timer">
+    <div class="tu"><span class="tu-n" id="tD">--</span><span class="tu-l">Days</span></div>
+    <div class="tu"><span class="tu-n" id="tH">--</span><span class="tu-l">Hrs</span></div>
+    <div class="tu"><span class="tu-n" id="tM">--</span><span class="tu-l">Min</span></div>
+    <div class="tu"><span class="tu-n" id="tS">--</span><span class="tu-l">Sec</span></div>
+  </div>
+  <button class="mbar-btn" id="evCta" data-order="salted-caramel">Order for Dad</button>
+</div>
+
+<!-- ====================================================
+  NAVIGATION
+  ==================================================== -->
+<nav>
+  <ul class="nav-links">
+    <li><a href="#top">Home</a></li>
+    <li><a href="#shop">Shop</a></li>
+    <li><a href="#workshop">Workshop</a></li>
+    <li><a href="#library">Dessert Library ✦</a></li>
+    <li><a href="#story">Our Story</a></li>
+  </ul>
+
+  <a href="#top" class="logo-wrap">
+    <div class="logo-img-area">
+      <img src="https://res.cloudinary.com/drsb3bbt7/image/upload/v1779183917/Screenshot_2026-05-19_174508_qxh5vk.jpg"
+           alt="Yoyoo Baker Logo"
+           style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--blush);display:block">
+    </div>
+    <div class="logo-text">
+      <span class="logo-name">Yoyoo Baker</span>
+      <span class="logo-jp">お菓子屋さん · Halal Artisan Patisserie</span>
+    </div>
+  </a>
+
+  <div class="nav-right">
+    <a href="#story">About</a>
+    <a href="#shop" class="btn btn-nav">Order Now</a>
+    <button class="nav-toggle" aria-label="Menu" id="navToggleBtn">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+</div><!-- end .header-wrap -->
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mmenu">
+  <button class="mm-close" id="mmClose" onclick="document.getElementById('mmenu').classList.remove('open')">&#x2715;</button>
+  <a href="#top" class="mm-link">🏠 Home</a>
+  <a href="#shop" class="mm-link">🛍 Shop</a>
+  <a href="#mothers" class="mm-link">👨 Father's Day</a>
+  <a href="#workshop" class="mm-link">🎨 Workshop</a>
+  <a href="#library" class="mm-link">✦ Dessert Library</a>
+  <a href="#story" class="mm-link">🌸 Our Story</a>
+  <!-- ↓↓↓ REPLACE href -->
+
+</div>
+
+<!-- ====================================================
+  HERO
+  ==================================================== -->
+<section class="hero" id="top">
+  <div class="hero-img">
+    <div class="hero-img-bg"></div>
+    <img src="https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184017/chatgpt-image-apr-4-2026-12-13-49-am-69cfe76e0679f_wn5jjk.png"
+         alt="Uji Matcha Mont Blanc — YoyooBaker Seasonal Cake"
+         onerror="this.style.display='none'">
+    <div class="hero-overlay"></div>
+    <div class="season-pill">✦ Midori Season · Apr–Jul 2026</div>
+    <div class="hero-cap">
+      <h3>Uji Matcha Mont Blanc</h3>
+      <span>Japanese Style · Season Limited · MYR 148</span>
+    </div>
+    <div class="stock-pill">⚠ 6 slots left this week</div>
+  </div>
+  <div class="hero-content">
+    <span class="h-eye">Japan-Trained Artisan Baker</span>
+    <h1 class="h-title">Cakes crafted<br>with <em>Japanese</em><br>precision.</h1>
+    <p class="h-sub">No preservatives. No fondant. Just real flavour.</p>
+    <p class="h-desc">Every cake is made with <strong>halal certified ingredients</strong> and our signature <strong>bean paste cream</strong> — a healthier, more flavourful alternative to traditional buttercream. Inspired by Japan, made with love in Setia Alam, Klang.</p>
+    <div class="promo-badge">
+      <span class="pb-icon">🎁</span>
+      <div class="pb-text">
+        <strong>First time here? Welcome!</strong>
+        Use code <span class="pb-code">HELLO10</span> for 10% off your first order
+      </div>
+    </div>
+    <div class="hero-btns">
+      <!-- ↓↓↓ REPLACE hrefs with your HitPay URLs -->
+      <a class="btn btn-primary" href="#shop">Shop Now →</a>
+      <a href="#mothers" class="btn btn-outline">Father's Day Gifts 👨</a>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+  TRUST STRIP
+  ==================================================== -->
+<div class="trust reveal">
+  <div class="ti"><span class="ti-icon">🇯🇵</span><div><div class="ti-lbl">JP Certified</div><div class="ti-desc">Patissier & Flower Piping, Japan</div></div></div>
+  <div class="ti"><span class="ti-icon">✅</span><div><div class="ti-lbl">Halal Certified</div><div class="ti-desc">JM1011522-T · All ingredients</div></div></div>
+  <div class="ti"><span class="ti-icon">🌿</span><div><div class="ti-lbl">No Preservatives</div><div class="ti-desc">Fresh-made daily, always</div></div></div>
+  <div class="ti"><span class="ti-icon">🏮</span><div><div class="ti-lbl">Bean Paste Cream</div><div class="ti-desc">Healthier than buttercream</div></div></div>
+</div>
+
+<!-- ====================================================
+  FATHER'S DAY SECTION
+  ==================================================== -->
+<section class="mothers reveal" id="mothers">
+  <div class="mothers-grid">
+    <div class="mothers-content">
+      <div class="m-tag">👨 Father's Day — 21 June 2026</div>
+      <h2 class="mothers-title">Dad doesn't ask<br>for much.<br><em>Give him this.</em></h2>
+      <p class="mothers-body">Rich, indulgent, and not too sweet — our salted caramel and dark chocolate cakes were basically made for dads. Make this Sunday one he actually remembers.</p>
+      <div class="m-urgency">
+        <strong>⏰ Order deadline: Friday 19 June 9am</strong>
+        Miss the cut-off and we cannot guarantee delivery. Limited slots — don't leave it last minute.
+      </div>
+      <button class="btn btn-mothers" data-order="salted-caramel">Order for Dad Now →</button>
+    </div>
+    <div class="mothers-products">
+      <span class="m-save">👨 Father's Day Bundle — Save RM25</span>
+      <a href="#" class="m-prod" data-order="salted-caramel">
+        <div class="m-prod-top">
+          <span class="m-prod-name">🎂 Dad's Day Set<br><small style="font-weight:400;font-size:11px;opacity:.65">Salted Caramel Cheesecake + Brownie Box</small></span>
+          <span class="m-prod-price"><s>RM235</s> RM210</span>
+        </div>
+        <div class="m-prod-desc">The ultimate dad combo — rich cheesecake + fudgy brownies. He'll ask where you ordered from.</div>
+      </a>
+      <a href="#" class="m-prod" data-order="salted-caramel">
+        <div class="m-prod-top">
+          <span class="m-prod-name">🍰 Salted Caramel Cheesecake</span>
+          <span class="m-prod-price">From RM145</span>
+        </div>
+        <div class="m-prod-desc">Rich, not overly sweet, perfectly balanced. 4 variants. A crowd-pleaser for every dad.</div>
+      </a>
+      <a href="#" class="m-prod" data-order="midnight-cocoa">
+        <div class="m-prod-top">
+          <span class="m-prod-name">🍫 Salted Caramel Brownie Box</span>
+          <span class="m-prod-price">From RM95</span>
+        </div>
+        <div class="m-prod-desc">Fudgy, walnut-topped, gift-boxed. Best brownies he's ever had — trust us.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- THE CAKE MENU — driven by content.js -->
+<div id="shop" style="background:var(--petal)">
+  <div style="padding:36px 5% 0">
+    <div class="sh reveal">
+      <div class="sh-eye">The Cake Menu</div>
+      <h2 class="sh-title">Three chapters.<br><em>One baker.</em></h2>
+      <div class="sh-line"></div>
+    </div>
+  </div>
+  <div id="cakeMenu" style="padding-bottom:48px"></div>
+</div>
+
+<!-- ====================================================
+  SEASONAL BANNER
+  ==================================================== -->
+<section class="seasonal reveal">
+  <div class="sg">
+    <div class="seasonal-text">
+      <span class="s-tag">✦ Midori Season · April – July 2026</span>
+      <h2 class="seasonal-title">Matcha season<br><em>is everything.</em></h2>
+      <p class="s-body">Once a year, we go all-in on Uji matcha — the real stuff, prepared the way it's done in Japan. These are not your regular matcha cakes.</p>
+      <p class="s-close">Season closes July 2026 — then it's gone for a year.</p>
+      <!-- ↓↓↓ REPLACE href -->
+      <button class="btn btn-white" data-order="uji-matcha">Shop Midori Season →</button>
+    </div>
+    <div class="sitems">
+      <a href="#" class="si" data-order="uji-matcha"><div class="si-icon">🍵</div><div class="si-name">Uji Matcha Mont Blanc</div><div class="si-price">Whole Cake · MYR 135 · Season Limited</div></a>
+      <a href="#workshop" class="si"><div class="si-icon">🌵</div><div class="si-name">Flower Piping Workshop</div><div class="si-price">Cactus Series · MYR 95</div></a>
+      <a href="#shop" class="si"><div class="si-icon">🧁</div><div class="si-name">Matcha Atzuki Scone</div><div class="si-price">日式抹茶蜜豆 · MYR 9.50</div></a>
+      <a href="#workshop" class="si"><div class="si-icon">📅</div><div class="si-name">Reserve a Workshop Slot</div><div class="si-price">Private or group available</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+  DESSERT LIBRARY (Curiosity)
+  ==================================================== -->
+<section class="library reveal" id="library">
+  <div class="sh reveal">
+    <div class="sh-eye" style="color:var(--gold)">✦ For the Curious</div>
+    <h2 class="sh-title" style="color:#fff">The Dessert <em style="color:var(--gold)">Library</em></h2>
+    <div class="sh-line" style="background:linear-gradient(90deg,var(--gold),rgba(200,169,110,.3));margin:16px auto 0"></div>
+  </div>
+  <p class="lib-body">Not everything we make is on the menu. Some things retired. Some things return. This is our archive — and if something says "returning," you'll want to be notified first.</p>
+  <div class="litems reveal">
+    <div class="li"><div class="li-status"><div class="li-dot" style="background:#6ddb8a"></div><span style="color:#6ddb8a;font-size:10px;letter-spacing:.14em;font-weight:600">Available Now</span></div><div class="li-name">Uji Matcha Mont Blanc</div><div class="li-season">Midori Season · Apr–Jul 2026</div></div>
+    <div class="li"><div class="li-status"><div class="li-dot" style="background:rgba(255,255,255,.3)"></div><span style="color:rgba(255,255,255,.4);font-size:10px;letter-spacing:.14em;font-weight:600">Retired · May 2026</span></div><div class="li-name">Mother's Day Flower Yam Cake</div><div class="li-season">Mother's Day 2026 · Watch for 2027 return</div></div>
+    <div class="li"><div class="li-status"><div class="li-dot" style="background:#6ddb8a"></div><span style="color:#6ddb8a;font-size:10px;letter-spacing:.14em;font-weight:600">Available Now</span></div><div class="li-name">Black Tea Cloud Cake</div><div class="li-season">Signature · Year-round</div></div>
+    <div class="li"><div class="li-status"><div class="li-dot" style="background:rgba(255,255,255,.3)"></div><span style="color:rgba(255,255,255,.4);font-size:10px;letter-spacing:.14em;font-weight:600">Retired · Watching for Return</span></div><div class="li-name">Sakura Strawberry Shortcake</div><div class="li-season">Sakura Season 2025 · Limited run</div></div>
+    <div class="li"><div class="li-status"><div class="li-dot" style="background:rgba(255,255,255,.3)"></div><span style="color:rgba(255,255,255,.4);font-size:10px;letter-spacing:.14em;font-weight:600">Retired · Perhaps Returning</span></div><div class="li-name">Hojicha Burnt Cheesecake</div><div class="li-season">Autumn Series 2024</div></div>
+    <div class="li mystery"><div style="text-align:center"><div style="font-size:26px;margin-bottom:9px;color:var(--gold)">?</div><div style="color:rgba(255,255,255,.38);font-family:var(--fd);font-style:italic;font-size:13.5px">What drops next season?<br><span style="font-size:11.5px;opacity:.6">Follow us to find out first</span></div></div></div>
+  </div>
+  <a href="#shop" class="btn btn-white">See All Products →</a>
+</section>
+
+<!-- ====================================================
+  TESTIMONIALS — 6 realistic reviews
+  ==================================================== -->
+<section class="testi reveal">
+  <div class="sh reveal">
+    <div class="sh-eye">What Customers Say</div>
+    <h2 class="sh-title">Real reviews. <em>Real love.</em></h2>
+    <div class="sh-line"></div>
+  </div>
+  <div class="tg reveal">
+
+    <!-- Review 1 -->
+    <div class="review">
+      <div class="rv-header">
+        <div class="rv-av" style="background:linear-gradient(135deg,#e07ba0,#c94f78)">NA</div>
+        <div class="rv-meta">
+          <span class="rv-name">Nurul Ain</span>
+          <span class="rv-date">2 weeks ago · Setia Alam</span>
+        </div>
+        <svg class="rv-source" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+      </div>
+      <div class="rv-stars">
+        <span class="rv-stars-icons">★★★★★</span>
+        <span class="rv-via">Google Review</span>
+      </div>
+      <p class="rv-text">Omg this cake is so <span class="rv-highlight">cantik and sedap</span>! The earl grey flavour hits different — not too sweet at all. My whole family habis the entire Black Tea Cloud Cake in one night 😂 Will definitely order again. Packaging pun very nice, felt so premium when it arrived!</p>
+      <div class="rv-photos">
+        <div class="rv-photo"><div class="rv-photo-bg" style="background:linear-gradient(135deg,#d4c0e8,#8868b8)"></div></div>
+        <div class="rv-photo"><div class="rv-photo-bg" style="background:linear-gradient(135deg,#e8d0c8,#b88878)"></div></div>
+      </div>
+      <div class="rv-verified">✓ Verified Purchase · Black Tea Cloud Cake</div>
+    </div>
+
+    <!-- Review 2 -->
+    <div class="review">
+      <div class="rv-header">
+        <div class="rv-av" style="background:linear-gradient(135deg,#60a878,#3a8058)">WL</div>
+        <div class="rv-meta">
+          <span class="rv-name">Wei Ling Tan</span>
+          <span class="rv-date">1 month ago · Klang</span>
+        </div>
+        <svg class="rv-source" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+      </div>
+      <div class="rv-stars">
+        <span class="rv-stars-icons">★★★★★</span>
+        <span class="rv-via">Google Review</span>
+      </div>
+      <p class="rv-text">Ordered the <span class="rv-highlight">Salted Caramel Cheesecake</span> for my husband's birthday and he was genuinely impressed. The caramel layer is perfectly balanced — rich without being jelat. You can tell it's made with real care. My Japanese colleague who visited from Osaka also said it reminded her of home. That's the highest compliment lah!</p>
+      <div class="rv-photos">
+        <div class="rv-photo"><div class="rv-photo-bg" style="background:linear-gradient(135deg,#e8d5c0,#a07848)"></div></div>
+      </div>
+      <div class="rv-verified">✓ Verified Purchase · Salted Caramel Cheesecake</div>
+    </div>
+
+    <!-- Review 3 -->
+    <div class="review">
+      <div class="rv-header">
+        <div class="rv-av" style="background:linear-gradient(135deg,#e09060,#c06030)">AH</div>
+        <div class="rv-meta">
+          <span class="rv-name">Ahmad Hafizuddin</span>
+          <span class="rv-date">1 week ago · Shah Alam</span>
+        </div>
+        <svg class="rv-source" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+      </div>
+      <div class="rv-stars">
+        <span class="rv-stars-icons">★★★★★</span>
+        <span class="rv-via">Google Review</span>
+      </div>
+      <p class="rv-text">Bro this <span class="rv-highlight">Uji Matcha Mont Blanc</span> is no joke. Rasa dia genuine matcha, bukan yang fake-sweet tu. Very different from the typical matcha cakes you find in KL — this one actually tastes like the real thing from Japan. Stock habis cepat gila so I suggest order early. Will 100% order again before season ends.</p>
+      <div class="rv-photos">
+        <div class="rv-photo"><div class="rv-photo-bg" style="background:linear-gradient(135deg,#8fb870,#3d6029)"></div></div>
+        <div class="rv-photo"><div class="rv-photo-bg" style="background:linear-gradient(135deg,#b0cc88,#607840)"></div></div>
+      </div>
+      <div class="rv-verified">✓ Verified Purchase · Uji Matcha Mont Blanc</div>
+    </div>
+
+    <!-- Review 4 -->
+    <div class="review">
+      <div class="rv-header">
+        <div class="rv-av" style="background:linear-gradient(135deg,#9060c8,#6030a0)">PR</div>
+        <div class="rv-meta">
+          <span class="rv-name">Priya Ramasamy</span>
+          <span class="rv-date">3 weeks ago · Klang</span>
+        </div>
+        <svg class="rv-source" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+      </div>
+      <div class="rv-stars">
+        <span class="rv-stars-icons">★★★★★</span>
+        <span class="rv-via">Google Review</span>
+      </div>
+      <p class="rv-text">Attended the <span class="rv-highlight">Japanese Flower Piping workshop</span> with my sister last Saturday. Yoyo is such a patient and fun teacher! I've never decorated a cake in my life and by the end I made something that looked genuinely professional. The cactus series is so creative — we brought our cupcakes home and everyone thought we bought them. Already planning the next session!</p>
+      <div class="rv-verified">✓ Verified Attendee · Flower Piping Workshop</div>
+    </div>
+
+    <!-- Review 5 -->
+    <div class="review">
+      <div class="rv-header">
+        <div class="rv-av" style="background:linear-gradient(135deg,#60a8c8,#3078a0)">MF</div>
+        <div class="rv-meta">
+          <span class="rv-name">Mei Fong Lim</span>
+          <span class="rv-date">3 days ago · Pelabuhan Klang</span>
+        </div>
+        <svg class="rv-source" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+      </div>
+      <div class="rv-stars">
+        <span class="rv-stars-icons">★★★★★</span>
+        <span class="rv-via">Google Review</span>
+      </div>
+      <p class="rv-text">The <span class="rv-highlight">Flower Bean Paste Cupcakes</span> are too pretty to eat lah seriously 😭 Bought as a birthday gift for my colleague and she thought I made them myself! The bean paste texture is so smooth and not gelak at all — very different from the usual buttercream. This is now my go-to for any gifting occasion. Highly recommended!</p>
+      <div class="rv-photos">
+        <div class="rv-photo"><div class="rv-photo-bg" style="background:linear-gradient(135deg,#f5c0d0,#c87090)"></div></div>
+        <div class="rv-photo"><div class="rv-photo-bg" style="background:linear-gradient(135deg,#f0d8c0,#c09060)"></div></div>
+      </div>
+      <div class="rv-verified">✓ Verified Purchase · Flower Cupcake Set</div>
+    </div>
+
+    <!-- Review 6 -->
+    <div class="review">
+      <div class="rv-header">
+        <div class="rv-av" style="background:linear-gradient(135deg,#c8a860,#a08030)">ZR</div>
+        <div class="rv-meta">
+          <span class="rv-name">Zulaikha Rahman</span>
+          <span class="rv-date">5 days ago · Meru, Klang</span>
+        </div>
+        <svg class="rv-source" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+      </div>
+      <div class="rv-stars">
+        <span class="rv-stars-icons">★★★★★</span>
+        <span class="rv-via">Google Review</span>
+      </div>
+      <p class="rv-text">Brought the <span class="rv-highlight">Brownie Box</span> to the office and habis dalam 15 minit tau! My colleagues kept asking where I ordered from. Texture dia fudgy sangat, walnut bagi extra crunch yang nice. Harga pun berpatutan untuk quality macam ni. I've tried many homemade brownies but these are on another level. Definitely repeat order!</p>
+      <div class="rv-verified">✓ Verified Purchase · Salted Caramel Brownie Box</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ====================================================
+  LOYALTY STAMPS
+  ==================================================== -->
+<section class="loyalty reveal">
+  <div class="sh reveal">
+    <div class="sh-eye">The Yoyoo Circle</div>
+    <h2 class="sh-title">Loyal customers <em>get rewarded.</em></h2>
+    <div class="sh-line"></div>
+  </div>
+  <p style="font-size:14px;color:var(--mid);max-width:480px;margin:0 auto 6px;line-height:1.8">Every whole cake order earns you a stamp. Collect 5, and your 6th cake is <strong>20% off</strong>. Simple, honest, sweet.</p>
+  <div class="stamps">
+    <div class="stamp filled">🌸</div>
+    <div class="stamp filled">🌸</div>
+    <div class="stamp filled">🌸</div>
+    <div class="stamp next">4</div>
+    <span class="st-arrow">→</span>
+    <div class="stamp" style="border-color:var(--blush);color:var(--light)">5</div>
+    <span class="st-arrow">→</span>
+    <div class="st-reward">20%<br>OFF</div>
+  </div>
+  <p class="loyalty-note">Ask about your Yoyoo Circle card with your next order. Old customers — you might already be halfway there.</p>
+  <!-- ↓↓↓ REPLACE href -->
+  <a href="https://wa.me/60123771639?text=Hi!%20I%20want%20to%20join%20the%20loyalty%20stamps%20program!" class="btn btn-primary" target="_blank">Start Earning Stamps →</a>
+</section>
+
+<!-- ====================================================
+  WORKSHOP
+  ==================================================== -->
+<section class="workshop reveal" id="workshop">
+  <div class="wg">
+    <div>
+      <div class="w-main">
+        <!-- ↓↓↓ REPLACE src with your actual workshop photo -->
+        <img src="https://images.unsplash.com/photo-1556910114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80" alt="Yoyoo Baker Workshop" onerror="this.style.display='none'">
+        <div class="w-main-bg"></div>
+      </div>
+      <div class="w-subs">
+        <div class="w-sm"><img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=400&q=80" alt="Flower piping" onerror="this.style.display='none'"><div class="w-sm-bg1"></div></div>
+        <div class="w-sm"><img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=400&q=80" alt="Cupcake art" onerror="this.style.display='none'"><div class="w-sm-bg2"></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="sh left reveal">
+        <div class="sh-eye">Workshop Experience</div>
+        <h2 class="sh-title">Learn the <em>Japanese art</em> of cake.</h2>
+        <div class="sh-line"></div>
+      </div>
+      <p style="font-size:13.5px;line-height:1.8;color:var(--mid);margin:20px 0 4px">Join Yoyo for a hands-on bean paste flower piping class — a skill she brought directly from Japan. Suitable for beginners, friends, and corporate teams.</p>
+      <div class="wcards">
+        <div class="wcard">
+          <h4>🌸 Japanese Flower Piping Experience</h4>
+          <p>Bean paste technique, seasonal themes — currently Midori (cactus series).</p>
+          <div class="wcard-meta">⚠ Only 2 seats left this Saturday · MYR 95/pax</div>
+        </div>
+        <div class="wcard">
+          <h4>👫 Workshop for 2 — Save RM22</h4>
+          <p>Bring a friend or your partner. 2 pax MYR 168. Perfect date idea.</p>
+        </div>
+        <div class="wcard">
+          <h4>🏢 Private & Corporate Sessions</h4>
+          <p>We come to you, or host at our café. Teams, events, hen parties.</p>
+        </div>
+      </div>
+      <!-- ↓↓↓ REPLACE href with HitPay workshop product URL -->
+      <a class="btn btn-primary" data-order="workshop-1">Book Workshop Slot &rarr;</button>
+    </div>
+  </div>
+</section>
+
+<!-- OUR STORY TEASER -->
+<div class="reveal" id="story" style="padding:52px 5%;background:var(--petal);display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap">
+  <div style="max-width:600px">
+    <div style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);font-weight:600;margin-bottom:8px">Our Story</div>
+    <h2 style="font-family:var(--fd);font-size:clamp(22px,3vw,38px);font-weight:400;color:var(--dark);margin-bottom:10px">Japan-trained. Halal.<br><em style="font-style:italic;color:var(--rose)">Made with heart.</em></h2>
+    <p style="font-size:13px;line-height:1.8;color:var(--mid);font-family:var(--fd);font-style:italic">Hi, I'm Yoyo. I trained as a patissier and flower art instructor in Japan and came back to Malaysia to share Japanese confectionery the right way &mdash; halal, no preservatives, and healthier with our signature bean paste cream.</p>
+  </div>
+  <div style="flex-shrink:0">
+    <a href="story.html" class="btn btn-primary" style="white-space:nowrap">Our Story &rarr;</a>
+  </div>
+</div>
+
+
+
+<!-- ====================================================
+  FOOTER
+  ==================================================== -->
+<footer>
+  <div class="fg">
+    <div>
+      <div class="f-name">🌸 Yoyoo Baker</div>
+      <div class="f-jp">お菓子屋さん · Halal Artisan Patisserie</div>
+      <p class="f-about">Japan-trained baker crafting artisan cakes, scones & workshops in Setia Alam, Klang. Halal certified. No preservatives. Real flavour.</p>
+      <div class="f-soc">
+        <!-- ↓↓↓ REPLACE hrefs with your real social media links -->
+        <a href="https://www.instagram.com/yoyoobaker" class="f-si" target="_blank" title="Instagram">📷</a>
+        <a href="https://facebook.com/yoyoobaker" class="f-si" target="_blank" title="Facebook">👍</a>
+        <a href="https://wa.me/60123771639" class="f-si" target="_blank" title="WhatsApp">💬</a>
+        <a href="https://tiktok.com/@yoyoobaker" class="f-si" target="_blank" title="TikTok">🎵</a>
+      </div>
+    </div>
+    <div class="fc">
+      <h4>Shop</h4>
+      <ul class="fl">
+        <!-- ↓↓↓ REPLACE hrefs with real HitPay collection URLs -->
+        <li><a href="https://hitpay.shop/yoyoobaker/" target="_blank">Whole Cakes</a></li>
+        <li><a href="https://hitpay.shop/yoyoobaker/" target="_blank">Scones</a></li>
+        <li><a href="https://hitpay.shop/yoyoobaker/" target="_blank">Cupcakes</a></li>
+        <li><a href="https://hitpay.shop/yoyoobaker/" target="_blank">The Long Table</a></li>
+        <li><a href="https://hitpay.shop/yoyoobaker/" target="_blank">Seasonal Drops</a></li>
+        <li><a href="#library">Dessert Library ✦</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Experience</h4>
+      <ul class="fl">
+        <li><a href="#workshop">Flower Piping Workshop</a></li>
+        <li><a href="#workshop">Workshop for 2</a></li>
+        <li><a href="#workshop">Corporate Sessions</a></li>
+        <li><a href="https://hitpay.shop/yoyoobaker/" target="_blank">Event Space Rental</a></li>
+        <li><a href="https://wa.me/60123771639" target="_blank">Custom Orders</a></li>
+        <li><a href="#loyalty">Yoyoo Circle (Loyalty)</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Find Us</h4>
+      <div class="f-addr">
+        <strong>📍 Setia Alam, Klang</strong>
+        Lot 4912, 5½ Miles,<br>Jalan Teratai, off Jalan Meru,<br>Klang 41050, Selangor
+        <br><br>
+        <strong>⏰ Order Cutoff</strong>
+        9am daily for same-day<br>
+        Father's Day: Fri 19 June 9am final
+      </div>
+    </div>
+  </div>
+  <div class="f-bot">
+    <div class="f-copy">© 2026 Yoyoo Baker (JM1011522-T) · All rights reserved · Powered by HitPay</div>
+    <div class="fpays">
+      <span class="fp">Visa</span><span class="fp">Mastercard</span><span class="fp">FPX</span>
+      <span class="fp">DuitNow</span><span class="fp">GrabPay</span><span class="fp">TnG</span>
+      <span class="fp">PayNow</span><span class="fp">ShopeePay</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ====================================================
+  WHATSAPP FLOATING BUTTON
+  ↓↓↓ REPLACE with your real WhatsApp number
+  ==================================================== -->
+<a href="https://wa.me/60123771639?text=Hi%20Yoyoo%20Baker!%20I'd%20like%20to%20order%20a%20cake%20%F0%9F%8E%82"
+   class="wa-btn" target="_blank" aria-label="Chat on WhatsApp">
+  <div class="wa-tooltip">Chat to order 💬</div>
+  <svg viewBox="0 0 24 24" fill="white" width="26" height="26"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+
+<!-- CAKE DETAIL MODAL -->
+<div class="detail-overlay" id="detailOverlay">
+  <div class="detail-modal">
+    <div class="dm-img">
+      <img id="dmImg" src="" alt="" style="display:none">
+      <div class="dm-img-bg" id="dmBg"></div>
+      <button class="dm-close-btn" id="dmClose">&#x2715;</button>
+      <span class="dm-status-badge" id="dmBadge"></span>
+    </div>
+    <div class="dm-body">
+      <div class="dm-chapter" id="dmChapter"></div>
+      <div class="dm-name" id="dmName"></div>
+      <div class="dm-desc" id="dmDesc"></div>
+      <div class="dm-footer">
+        <div><span class="dm-price" id="dmPrice"></span><span class="dm-price-note">7 inch whole cake</span></div>
+        <div class="dm-actions">
+          <div class="dm-qty-wrap">
+            <button class="dm-qty-btn" id="dmMinus">&#8722;</button>
+            <span class="dm-qty-val" id="dmQty">1</span>
+            <button class="dm-qty-btn" id="dmPlus">&#43;</button>
+          </div>
+          <button class="dm-order-btn" id="dmOrderBtn">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3-STEP CHECKOUT PORTAL -->
+<div class="co-overlay" id="coOverlay">
+  <div class="co-modal" id="coModal">
+    <div class="co-steps">
+      <div class="co-step active" id="step-tab-1"><div class="co-step-num" id="sn1">1</div><span class="co-step-lbl">Your Order</span></div>
+      <div class="co-step" id="step-tab-2"><div class="co-step-num" id="sn2">2</div><span class="co-step-lbl">Your Details</span></div>
+      <div class="co-step" id="step-tab-3"><div class="co-step-num" id="sn3">3</div><span class="co-step-lbl">Confirm</span></div>
+    </div>
+    <div class="co-header">
+      <button class="co-close" id="coClose">&#x2715;</button>
+      <div class="co-product-bar">
+        <div class="co-pimg"><img id="coPimg" src="" alt=""><div class="co-pimg-bg" id="coPbg"></div></div>
+        <div class="co-pinfo">
+          <span class="co-pname" id="coPname">Cake</span>
+          <span class="co-psub" id="coPsub">7 inch whole cake</span>
+          <span class="co-pprice" id="coPprice">RM118</span>
+        </div>
+      </div>
+    </div>
+    <div class="co-body">
+      <div class="co-step-panel active" id="panel-1">
+        <div class="co-section">Add-ons</div>
+        <button class="co-addon" id="addonBirthday" type="button">
+          <input type="checkbox" id="chkBirthday">
+          <div class="co-addon-info"><span class="co-addon-label">Birthday Ritual</span><span class="co-addon-sub">Candle + topper — complete the moment</span></div>
+          <span class="co-addon-price">+RM5</span>
+        </button>
+        <button class="co-addon" id="addonSalt" type="button">
+          <input type="checkbox" id="chkSalt">
+          <div class="co-addon-info"><span class="co-addon-label">Sea Salt Flakes</span><span class="co-addon-sub">Finishing touch for cheesecakes and brownies</span></div>
+          <span class="co-addon-price">+RM5</span>
+        </button>
+        <div class="co-btn-row" style="margin-top:20px">
+          <button class="co-btn-next" id="goStep2">Next — Your Details &rarr;</button>
+        </div>
+      </div>
+      <div class="co-step-panel" id="panel-2">
+        <div class="co-section">Your Details</div>
+        <div class="co-form">
+          <div class="co-row">
+            <div class="co-field"><label for="coName">Your Name *</label><input type="text" id="coName" placeholder="e.g. Siti Norzahra"></div>
+            <div class="co-field"><label for="coPhone">WhatsApp Number *</label><input type="tel" id="coPhone" placeholder="e.g. 012-345 6789"></div>
+          </div>
+          <div class="co-field"><label for="coDate">Preferred Pickup / Delivery Date &amp; Time *</label><input type="datetime-local" id="coDate"><span id="coDateErr" style="display:none;font-size:11px;color:#c0392b;margin-top:3px;display:none">Please choose a date at least 3 days from today.</span></div>
+          <div class="co-field"><label for="coNotes">Dedication or Special Requests</label><textarea id="coNotes" placeholder="e.g. Happy Birthday Mum! Pickup at 3pm."></textarea></div>
+          <p class="co-err" id="errMsg">Please fill in all required fields.</p>
+        </div>
+        <div class="co-btn-row" style="margin-top:14px">
+          <button class="co-btn-back" id="goStep1back">&larr; Back</button>
+          <button class="co-btn-next" id="goStep3">Review Order &rarr;</button>
+        </div>
+      </div>
+      <div class="co-step-panel" id="panel-3">
+        <div class="co-section">Order Summary</div>
+        <div class="co-summary-box" id="coSummaryBox"></div>
+        <div class="co-how">
+          <div class="co-how-title">What happens next</div>
+          <div class="co-how-step"><div class="co-how-num">1</div><span>Click <strong>Pay Now</strong> — your secure payment link is generated instantly.</span></div>
+          <div class="co-how-step"><div class="co-how-num">2</div><span>You are taken to <strong>HitPay</strong> to pay via FPX, DuitNow, GrabPay, TnG or Card.</span></div>
+          <div class="co-how-step"><div class="co-how-num">3</div><span>Payment confirmed — <strong>Yoyo gets notified</strong> and prepares your order.</span></div>
+        </div>
+
+        <!-- Pay Now button -->
+        <button class="co-btn-confirm" id="coConfirm">
+          <span id="coConfirmText">Pay Now</span>
+          <span id="coConfirmTotal" style="font-size:15px;opacity:.85"></span>
+        </button>
+
+        <!-- Loading state (hidden by default) -->
+        <div id="coLoading" style="display:none;text-align:center;padding:16px 0">
+          <div style="font-size:13px;color:var(--mid);margin-bottom:8px">Generating your secure payment link...</div>
+          <div style="display:flex;justify-content:center;gap:6px">
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--terra);animation:dot 1.2s infinite ease-in-out"></div>
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--terra);animation:dot 1.2s .2s infinite ease-in-out"></div>
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--terra);animation:dot 1.2s .4s infinite ease-in-out"></div>
+          </div>
+        </div>
+        <style>@keyframes dot{0%,80%,100%{transform:scale(.6);opacity:.4}40%{transform:scale(1);opacity:1}}</style>
+
+        <!-- Error state (hidden by default) -->
+        <div id="coError" style="display:none;background:#fff3f3;border:1px solid #f5c6c6;border-radius:4px;padding:14px;margin-top:12px;font-size:12.5px;color:#c0392b;line-height:1.6">
+          <strong style="display:block;margin-bottom:4px">Payment link failed to generate.</strong>
+          <span>Please try again or <a href="https://wa.me/60123771639" target="_blank" style="color:var(--terra);font-weight:600">WhatsApp Yoyo directly</a> to place your order.</span>
+        </div>
+
+        <p style="text-align:center;margin-top:10px;font-size:11px;color:var(--light);font-family:var(--fd);font-style:italic">Secured by HitPay &mdash; FPX · DuitNow · GrabPay · TnG · Card</p>
+        <div class="co-btn-row" style="margin-top:12px">
+          <button class="co-btn-back" id="goStep2back">&larr; Edit Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE STICKY CTA -->
+<div class="mobile-cta">
+  <div class="mcta-row">
+    <a class="btn btn-primary" data-order="salted-caramel" style="flex:2">Order Now</button>
+    <a href="https://wa.me/60123771639" class="btn btn-outline" target="_blank" rel="noopener" style="flex:1">WhatsApp</a>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+  /* ══════════════════════════════════════════════════════
+     MENU DATA — Edit prices, add products, change status here
+     ══════════════════════════════════════════════════════ */
 // ============================================================
 // YOYOO BAKER — content.js
 // ============================================================
@@ -356,3 +1610,360 @@ var SITE = {
   ]
 
 };
+
+
+
+  var P = {
+    'black-tea-cloud':  { name:'Black Tea Cloud Cake',        sub:'The Cloud - Earl Grey layers',           price:118, img:'https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184013/df-69aab7132749a_qsvk1l.jpg',                                                                                bg:'linear-gradient(145deg,#d4c8e8,#7468a0)' },
+    'zen':              { name:'Zen Cheesecake',               sub:'The Cloud - Smooth and barely-sweet',    price:118, img:'https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184016/chatgpt-image-mar-13-2026-05-59-05-pm-69b3e051a4b4e_igjt9x.png',                                        bg:'linear-gradient(145deg,#e8e0d4,#a09080)' },
+    'cha-to-lemon':     { name:'Cha To Lemon',                 sub:'The Cloud - Green tea meets lemon curd', price:118, img:'https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184015/lemon-cake-69baba44a57bf_fat0cg.png',                                                                    bg:'linear-gradient(145deg,#f0e8b8,#c0a840)' },
+    'uji-matcha':       { name:'Uji Matcha Mont Blanc',        sub:'Season Limited - April to July only',    price:148, img:'https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184017/chatgpt-image-apr-4-2026-12-13-49-am-69cfe76e0679f_wn5jjk.png',                                        bg:'linear-gradient(145deg,#8fb870,#3d6029)' },
+    'midnight-cocoa':   { name:'Midnight Cocoa',               sub:'After Dark - Triple cocoa layers',       price:138, img:'https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184014/chocolate-cake-69bab54c7bef4_xic25i.png',                                                                bg:'linear-gradient(145deg,#d0a898,#603828)' },
+    'tira-mocha':       { name:'Tira-Mocha Cake',              sub:'After Dark - Tiramisu meets mocha',      price:138, img:'https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184016/tiranocha-2-69b66c17375db_zymq9h.png',                                                                  bg:'linear-gradient(145deg,#d4c0a8,#806040)' },
+    'black-sesame':     { name:'Black Sesame Coconut',         sub:'After Dark - Nutty and aromatic',        price:138, img:'https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184016/black-sesame-2-69bab519585ce_ljxk18.png',                                                               bg:'linear-gradient(145deg,#d4d0c8,#484440)' },
+    'salted-caramel':   { name:'Salted Caramel Cheesecake',    sub:'The Signature - 4 variants available',   price:138, img:'https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184018/chatgpt-image-mar-14-2026-10-58-14-am-69b4d8c0cca3f_wugfys.png',                                      bg:'linear-gradient(145deg,#e8d5c0,#8b5e3c)' },
+    'dirty-peanut':     { name:'Dirty Peanut Cheesecake',      sub:'The Signature - Peanut lovers',          price:118, img:'https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184016/dirty-peanut-cheesecake-69b4e242f193e_khbz1a.png',                                                     bg:'linear-gradient(145deg,#d4b888,#8b6030)' }
+  };
+
+  var cur = null;
+
+  function g(id) { return document.getElementById(id); }
+
+  function openCheckout(key) {
+    var p = P[key]; if (!p) return; cur = p;
+    g('coPimg').src = p.img; g('coPbg').style.background = p.bg;
+    g('coPname').textContent = p.name; g('coPsub').textContent = p.sub;
+    g('coPprice').textContent = 'RM' + p.price;
+    g('chkBirthday').checked = false; g('chkSalt').checked = false;
+    g('coName').value = ''; g('coPhone').value = '';
+    // Set minimum date to 3 days from today
+    var minD = new Date(); minD.setDate(minD.getDate() + 3);
+    var pad = function(n){return String(n).padStart(2,'0');};
+    var minStr = minD.getFullYear()+'-'+pad(minD.getMonth()+1)+'-'+pad(minD.getDate())+'T09:00';
+    g('coDate').min = minStr;
+    g('coDate').value = ''; g('coNotes').value = '';
+    g('errMsg').style.display = 'none';
+    g('addonBirthday').className = 'co-addon';
+    g('addonSalt').className = 'co-addon';
+    goStep(1);
+    g('coOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCheckout() {
+    g('coOverlay').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function goStep(n) {
+    for (var i = 1; i <= 3; i++) {
+      var t = g('step-tab-' + i), p = g('panel-' + i), s = g('sn' + i);
+      if (i === n)      { t.className='co-step active'; p.className='co-step-panel active'; s.textContent=i; }
+      else if (i < n)   { t.className='co-step done';   p.className='co-step-panel'; s.innerHTML='&#10003;'; }
+      else              { t.className='co-step';         p.className='co-step-panel'; s.textContent=i; }
+    }
+    g('coModal').scrollTop = 0;
+  }
+
+  function buildSummary() {
+    var p = cur;
+    var bd = g('chkBirthday').checked, sl = g('chkSalt').checked;
+    var tot = p.price + (bd ? 5 : 0) + (sl ? 5 : 0);
+    var h = '<div class="co-sum-row"><span>' + p.name + '</span><span>RM' + p.price + '</span></div>';
+    if (bd) h += '<div class="co-sum-row"><span>Birthday Ritual (candle + topper)</span><span>+RM5</span></div>';
+    if (sl) h += '<div class="co-sum-row"><span>Sea Salt Flakes</span><span>+RM5</span></div>';
+    h += '<div class="co-sum-row"><span>Total</span><span>RM' + tot + '</span></div>';
+    g('coSummaryBox').innerHTML = h;
+    var ct = g('coConfirmTotal');
+    if (ct) ct.textContent = '\u2014 RM' + tot;
+    return tot;
+  }
+
+  function sendOrder() {
+    var p = cur;
+    var name  = g('coName').value.trim();
+    var phone = g('coPhone').value.trim();
+    var date  = g('coDate').value;
+    var notes = g('coNotes').value.trim();
+    var bd = g('chkBirthday').checked, sl = g('chkSalt').checked;
+    var tot = p.price + (bd ? 5 : 0) + (sl ? 5 : 0);
+    var addons = [];
+    if (bd) addons.push('Birthday Ritual');
+    if (sl) addons.push('Sea Salt Flakes');
+    var productDesc = p.name + (addons.length ? ' + ' + addons.join(' + ') : '');
+
+    // Show loading state
+    g('coConfirm').style.display = 'none';
+    g('coLoading').style.display = 'block';
+    g('coError').style.display = 'none';
+
+    // Call Netlify Function to create HitPay payment request
+    fetch('/.netlify/functions/create-payment', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        amount:  tot,
+        name:    name,
+        phone:   phone,
+        product: productDesc,
+        notes:   notes,
+        date:    date
+      })
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      g('coLoading').style.display = 'none';
+      if (data.url) {
+        closeCheckout();
+        window.location.href = data.url;
+      } else {
+        g('coConfirm').style.display = 'flex';
+        // Show the actual error from HitPay so we can diagnose
+        var errDetail = data.hitpay_message || data.error || 'Unknown error';
+        var errEl = g('coError');
+        errEl.innerHTML = '<strong style="display:block;margin-bottom:4px">Payment failed (Status: ' + (data.hitpay_status || '?') + ')</strong>' +
+          '<span style="font-size:11.5px;word-break:break-all">' + errDetail + '</span><br><br>' +
+          '<span>Please <a href="https://wa.me/60123771639" target="_blank" style="color:var(--terra);font-weight:600">WhatsApp Yoyo</a> to order.</span>';
+        errEl.style.display = 'block';
+      }
+    })
+    .catch(function(err) {
+      g('coLoading').style.display = 'none';
+      g('coConfirm').style.display = 'flex';
+      var errEl = g('coError');
+      errEl.innerHTML = '<strong style="display:block;margin-bottom:4px">Connection error</strong>' +
+        '<span>Please <a href="https://wa.me/60123771639" target="_blank" style="color:var(--terra);font-weight:600">WhatsApp Yoyo</a> to order.</span>';
+      errEl.style.display = 'block';
+    });
+  }
+
+  /* Listeners */
+  g('coClose').addEventListener('click', closeCheckout);
+  g('coOverlay').addEventListener('click', function(e) { if (e.target === this) closeCheckout(); });
+  g('addonBirthday').addEventListener('click', function() {
+    var cb = g('chkBirthday'); cb.checked = !cb.checked;
+    this.className = 'co-addon' + (cb.checked ? ' checked' : '');
+  });
+  g('addonSalt').addEventListener('click', function() {
+    var cb = g('chkSalt'); cb.checked = !cb.checked;
+    this.className = 'co-addon' + (cb.checked ? ' checked' : '');
+  });
+  g('chkBirthday').addEventListener('click', function(e) { e.stopPropagation(); });
+  g('chkSalt').addEventListener('click', function(e) { e.stopPropagation(); });
+  g('goStep2').addEventListener('click', function() { goStep(2); });
+  g('goStep1back').addEventListener('click', function() { goStep(1); });
+  g('goStep3').addEventListener('click', function() {
+    var name = g('coName').value.trim();
+    var phone = g('coPhone').value.trim();
+    var date = g('coDate').value;
+    var err = g('errMsg');
+    if (!name || !phone || !date) {
+      err.textContent = 'Please fill in your name, WhatsApp number and preferred date.';
+      err.style.display = 'block'; return;
+    }
+    // Require at least 3 days advance notice
+    var chosen   = new Date(date);
+    var earliest = new Date();
+    earliest.setDate(earliest.getDate() + 3);
+    earliest.setHours(0, 0, 0, 0);
+    if (chosen < earliest) {
+      err.textContent = 'Please order at least 3 days in advance so we have time to prepare your cake!';
+      err.style.display = 'block'; return;
+    }
+    err.style.display = 'none';
+    buildSummary();
+    goStep(3);
+  });
+  g('goStep2back').addEventListener('click', function() { goStep(2); });
+  g('coConfirm').addEventListener('click', sendOrder);
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeCheckout(); });
+
+  /* Open via data-order */
+  document.addEventListener('click', function(e) {
+    var el = e.target.closest('[data-order]');
+    if (el) { e.preventDefault(); openCheckout(el.getAttribute('data-order')); }
+  });
+
+  /* Scroll reveal */
+  var reveals = document.querySelectorAll('.reveal');
+  if (typeof IntersectionObserver !== 'undefined') {
+    var ro = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry, idx) {
+        if (entry.isIntersecting) {
+          setTimeout(function() { entry.target.classList.add('visible'); }, idx * 55);
+          ro.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
+    reveals.forEach(function(el) { ro.observe(el); });
+  } else {
+    reveals.forEach(function(el) { el.classList.add('visible'); });
+  }
+
+  /* Event calendar */
+  var EV = [
+    { name:"Father's Day - 21 June", icon:"\uD83D\uDC68", sub:"Order by Fri 19 June 9am", cta:"Order for Dad", deadline:new Date(2026,5,19,9,0,0) },
+    { name:"Mid-Autumn Festival",    icon:"\uD83C\uDFEE", sub:"Seasonal special - limited slots", cta:"Order Now", deadline:new Date(2026,9,2,9,0,0) }
+  ];
+  var now = new Date(), ev = EV[0];
+  for (var i = 0; i < EV.length; i++) { if (EV[i].deadline > now) { ev = EV[i]; break; } }
+  var eI=g('evIcon'),eN=g('evName'),eS=g('evSub'),eC=g('evCta');
+  if(eI) eI.textContent=ev.icon; if(eN) eN.textContent=ev.name;
+  if(eS) eS.textContent=ev.sub; if(eC) eC.textContent=ev.cta;
+
+  /* Countdown */
+  function tick() {
+    var diff = ev.deadline - new Date(), el = g('timer'); if (!el) return;
+    if (diff <= 0) { el.innerHTML='<span style="color:rgba(255,255,255,.7);font-size:11px;font-weight:600">Order window closed</span>'; return; }
+    var d=Math.floor(diff/86400000),h=Math.floor((diff%86400000)/3600000),m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000);
+    var tD=g('tD'),tH=g('tH'),tM=g('tM'),tS=g('tS');
+    if(tD)tD.textContent=String(d).padStart(2,'0'); if(tH)tH.textContent=String(h).padStart(2,'0');
+    if(tM)tM.textContent=String(m).padStart(2,'0'); if(tS)tS.textContent=String(s).padStart(2,'0');
+  }
+  tick(); setInterval(tick, 1000);
+
+  /* Mobile menu */
+  var mm=g('mmenu'), nt=g('navToggleBtn'), mc=g('mmClose');
+  if(nt) nt.addEventListener('click', function() { if(mm) mm.classList.toggle('open'); });
+  if(mc) mc.addEventListener('click', function() { if(mm) mm.classList.remove('open'); });
+  document.querySelectorAll('.mm-link,.mm-cta').forEach(function(l) { l.addEventListener('click', function() { if(mm) mm.classList.remove('open'); }); });
+
+  /* Smooth scroll */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var h = a.getAttribute('href'); if (!h || h === '#') return;
+      var t = document.querySelector(h); if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'}); }
+    });
+  });
+
+
+  /* === EXTRA PRODUCTS === */
+  P['dads-set']   = { name:"Dad's Day Set", sub:"Father's Day Special", price:210, img:'https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184018/chatgpt-image-mar-14-2026-10-58-14-am-69b4d8c0cca3f_wugfys.png', bg:'linear-gradient(145deg,#e8d5c0,#8b5e3c)' };
+
+  /* Sync SITE cakes into P so checkout works for all cakes */
+  if (window.SITE && SITE.cakes) {
+    SITE.cakes.forEach(function(c) {
+      if (c.status !== 'coming-soon' && !P[c.key]) {
+        P[c.key] = { name: c.name, sub: c.desc ? c.desc.substring(0,60) : '', price: c.price, img: c.img || '', bg: c.bg || '' };
+      }
+    });
+  }
+
+  P['workshop-1'] = { name:'The First Petal', sub:'1-Hour Flower Piping', price:88, img:'https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184017/chatgpt-image-apr-4-2026-12-13-49-am-69cfe76e0679f_wn5jjk.png', bg:'linear-gradient(145deg,#dde8f0,#5a7e9e)' };
+
+  /* === CAKE MENU === */
+  var CHM = {
+    cloud:     { title:'The Cloud',      icon:'&#9925;',   mood:'Light, delicate, Japanese in spirit. For people who find joy in subtlety.' },
+    afterdark: { title:'After Dark',     icon:'&#127769;', mood:'Rich. Deep. The kind you eat slowly. For people who know what they want.' },
+    signature: { title:'The Signature',  icon:'&#127855;', mood:'The ones that built us. Tried once. Ordered again. Brought someone else along.' },
+    seasonal:  { title:"Season's Story", icon:'&#127861;', mood:'These cakes exist for a reason. They are here now. Then they are gone.' }
+  };
+  var CHO = ['cloud','afterdark','signature','seasonal'];
+
+  function buildCakeMenu() {
+    if (!window.SITE || !SITE.cakes) { setTimeout(buildCakeMenu, 200); return; }
+    var out = '';
+    CHO.forEach(function(id) {
+      var m = CHM[id];
+      var cs = SITE.cakes.filter(function(c){ return c.chapter === id; });
+      if (!cs.length) return;
+      out += '<div class="chapter">';
+      out += '<div class="chapter-header reveal"><div class="chapter-left">';
+      out += '<span class="chapter-icon">' + m.icon + '</span>';
+      out += '<span class="chapter-name">' + m.title + '</span>';
+      out += '<span class="chapter-mood">' + m.mood + '</span></div>';
+      out += '<div class="c-nav"><button class="c-btn" onclick="scrollCar(this,-1)">&#8592;</button>';
+      out += '<button class="c-btn" onclick="scrollCar(this,1)">&#8594;</button></div></div>';
+      out += '<div class="chapter-grid reveal">';
+      cs.forEach(function(c) {
+        if (c.status === 'coming-soon') {
+          out += '<div class="pc" style="opacity:.68;pointer-events:none">';
+          out += '<div class="pc-img"><div class="pc-img-bg" style="background:' + c.bg + '"></div>';
+          out += '<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(250,247,242,.86);z-index:2;gap:4px">';
+          out += '<span style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--light)">Coming Soon</span>';
+          out += '<strong style="font-family:var(--fd);font-size:14px;color:var(--dark);text-align:center;padding:0 10px;line-height:1.3">' + c.name + '</strong>';
+          out += '</div></div>';
+          out += '<div class="pc-info"><div class="pc-name" style="color:var(--light)">' + c.name + '</div>';
+          out += '<div class="pc-sub">Coming soon</div>';
+          out += '<div class="pc-foot"><div class="pc-foot-row"><span class="pc-price" style="color:var(--light)">RM' + c.price + '</span></div></div></div></div>';
+        } else {
+          out += '<a href="#" class="pc" data-order="' + c.key + '">';
+          out += '<div class="pc-img" style="position:relative">';
+          if (c.img) out += '<img src="' + c.img + '" alt="' + c.name + '">';
+          out += '<div class="pc-img-bg" style="background:' + c.bg + '"></div>';
+          out += '<div class="pc-badges"><span class="badge ' + (c.status==='seasonal'?'b-season">&nbsp;Seasonal':'b-hot">Available') + '</span></div>';
+          out += '</div><div class="pc-info">';
+          out += '<div class="pc-name">' + c.name + '</div>';
+          var sd = c.desc ? (c.desc.length>55?c.desc.substring(0,55)+'...':c.desc) : '';
+          out += '<div class="pc-sub">' + sd + '</div>';
+          out += '<div class="pc-foot"><div class="pc-foot-row">';
+          out += '<span class="pc-price">RM' + c.price + '</span>';
+          out += '<span class="pc-cta">Order \u2192</span>';
+          out += '</div>';
+          out += '<button class="btn-detail" onclick="event.preventDefault();event.stopPropagation();openDet(\'' + c.key + '\')">View Details</button>';
+          out += '</div></div></a>';
+        }
+      });
+      out += '</div></div><div class="chapter-divider"></div>';
+    });
+    var el = document.getElementById('cakeMenu');
+    if (el) { el.innerHTML = out; reobs(); }
+  }
+
+  window.scrollCar = function(btn, dir) {
+    var g2 = btn.closest('.chapter').querySelector('.chapter-grid');
+    if (g2) g2.scrollBy({ left: dir * 260, behavior: 'smooth' });
+  }
+
+  function reobs() {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(function(el) { ro.observe(el); });
+  }
+
+  /* === DETAIL MODAL === */
+  var _dk = null, _dq = 1;
+
+  window.openDet = function(key) {
+    var cake = null;
+    if (window.SITE && SITE.cakes) {
+      for (var i=0;i<SITE.cakes.length;i++) { if(SITE.cakes[i].key===key){cake=SITE.cakes[i];break;} }
+    }
+    if (!cake) cake = P[key];
+    if (!cake) return;
+    _dk = key; _dq = 1;
+    var img=g('dmImg'),bg=g('dmBg'),badge=g('dmBadge');
+    var ch=g('dmChapter'),nm=g('dmName'),dsc=g('dmDesc');
+    var pr=g('dmPrice'),qt=g('dmQty'),ob=g('dmOrderBtn');
+    if(img){img.src=cake.img||'';img.style.display=cake.img?'block':'none';}
+    if(bg) bg.style.background=cake.bg||'';
+    if(badge){
+      var s=cake.status||'available';
+      badge.textContent=s==='seasonal'?'Seasonal':s==='coming-soon'?'Coming Soon':'Available';
+      badge.style.background=s==='seasonal'?'#b5604a':s==='coming-soon'?'rgba(30,26,24,.6)':'#6b8050';
+    }
+    if(ch)  ch.textContent=(cake.chapter||'').toUpperCase().replace('-',' ');
+    if(nm)  nm.textContent=cake.name||'';
+    if(dsc) dsc.textContent=cake.desc||cake.sub||'';
+    if(pr)  pr.textContent='RM'+(cake.price||'');
+    if(qt)  qt.textContent='1';
+    if(ob){ob.disabled=cake.status==='coming-soon';ob.textContent=cake.status==='coming-soon'?'Coming Soon':'Order Now';}
+    g('detailOverlay').classList.add('active');
+    document.body.style.overflow='hidden';
+  }
+
+  window.closeDet = function(){g('detailOverlay').classList.remove('active');document.body.style.overflow='';}
+
+  (function(){
+    var c=g('dmClose'),ov=g('detailOverlay'),mi=g('dmMinus'),pl=g('dmPlus'),ob=g('dmOrderBtn');
+    if(c)  c.addEventListener('click',closeDet);
+    if(ov) ov.addEventListener('click',function(e){if(e.target===this)closeDet();});
+    if(mi) mi.addEventListener('click',function(){if(_dq>1){_dq--;g('dmQty').textContent=_dq;}});
+    if(pl) pl.addEventListener('click',function(){_dq++;g('dmQty').textContent=_dq;});
+    if(ob) ob.addEventListener('click',function(){if(!_dk)return;closeDet();openCheckout(_dk);});
+  })();
+
+  buildCakeMenu();
+
+}); // DOMContentLoaded
+</script>
+</body>
+</html>
