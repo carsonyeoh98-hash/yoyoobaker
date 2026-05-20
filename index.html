@@ -32,6 +32,7 @@
 </script>
 -->
 
+<script src="content.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -45,7 +46,7 @@
   --mid:#6b5c55;   --light:#9e8a82; --matcha:#6b8050;
   --gold:#c8a96e;  --white:#fff;
   --mothers:#8b3a6e; --mothers-light:#f5e6f0;
-  --event-color:#1e3a5f; --event-light:#e8eef5;
+  --event-color:#3d8bd4; --event-light:#daeeff;
   --fd:'Cormorant Garamond',serif; --fb:'Jost',sans-serif;
 }
 
@@ -166,7 +167,7 @@ nav{background:rgba(250,247,242,.97);border-bottom:1px solid rgba(181,96,74,.12)
 .sh.left .sh-line{margin:16px 0 0}
 
 /* EVENT SECTION */
-.mothers{padding:72px 5%;background:linear-gradient(135deg,#0f2440,#1e3a5f,#2a4f7a);position:relative;overflow:hidden}
+.mothers{padding:72px 5%;background:linear-gradient(135deg,#2a6db5,#3d8bd4,#5aaae8);position:relative;overflow:hidden}
 .mothers::before{content:'父の日';position:absolute;right:-40px;top:50%;transform:translateY(-50%);font-size:160px;color:rgba(255,255,255,.04);font-family:var(--fd);white-space:nowrap;user-select:none}
 .mothers-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;position:relative;z-index:1}
 .mothers-content{color:#fff}
@@ -204,7 +205,7 @@ nav{background:rgba(250,247,242,.97);border-bottom:1px solid rgba(181,96,74,.12)
 .cat-badge.green{background:var(--matcha)}
 
 /* CHAPTER HEADERS */
-.chapter{padding:56px 5% 0;background:var(--petal)}
+.chapter{padding:20px 5% 0;background:var(--petal)}
 .chapter-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--blush);flex-wrap:wrap;gap:12px}
 .chapter-left{}
 .chapter-icon{font-size:28px;display:block;margin-bottom:6px}
@@ -224,6 +225,39 @@ nav{background:rgba(250,247,242,.97);border-bottom:1px solid rgba(181,96,74,.12)
 
 /* SECTION DIVIDER between chapters */
 .chapter-divider{height:1px;background:linear-gradient(90deg,transparent,var(--blush),transparent);margin:0 5%}
+
+/* CAROUSEL */
+.chapter-grid{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:0 0 16px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.chapter-grid::-webkit-scrollbar{display:none}
+.chapter-grid .pc,.chapter-grid .pc-soon{flex:0 0 238px;scroll-snap-align:start}
+.c-nav{display:flex;gap:8px;justify-content:flex-end;margin-bottom:10px}
+.c-btn{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--blush);background:white;cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;transition:all .2s;color:var(--mid);font-family:var(--fb)}
+.c-btn:hover{background:var(--terra);color:white;border-color:var(--terra)}
+.btn-detail{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--light);border:none;border-bottom:1px solid var(--blush);padding:0 0 1px;transition:all .2s;font-weight:500;cursor:pointer;background:none;font-family:var(--fb);display:inline-block}
+.btn-detail:hover{color:var(--mid);border-color:var(--mid)}
+/* DETAIL MODAL */
+.detail-overlay{position:fixed;inset:0;background:rgba(20,16,14,.78);z-index:1000;display:none;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(4px)}
+.detail-overlay.active{display:flex}
+.detail-modal{background:#fff;width:100%;max-width:500px;border-radius:6px;overflow:hidden;box-shadow:0 24px 80px rgba(20,16,14,.35);max-height:92vh;overflow-y:auto}
+.dm-img{height:200px;position:relative;overflow:hidden}
+.dm-img img{width:100%;height:100%;object-fit:cover}
+.dm-img-bg{position:absolute;inset:0}
+.dm-close-btn{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.9);border:none;width:30px;height:30px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--mid);z-index:2}
+.dm-status-badge{position:absolute;bottom:12px;left:12px;padding:3px 9px;font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:2px;z-index:2;color:#fff}
+.dm-body{padding:20px}
+.dm-chapter{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);font-weight:600;margin-bottom:5px}
+.dm-name{font-family:var(--fd);font-size:21px;font-weight:500;color:var(--dark);margin-bottom:10px;line-height:1.2}
+.dm-desc{font-size:13px;line-height:1.85;color:var(--mid);margin-bottom:16px;font-family:var(--fd);font-style:italic}
+.dm-footer{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--petal);flex-wrap:wrap;gap:10px}
+.dm-price{font-size:20px;font-weight:700;color:var(--terra);font-family:var(--fd);display:block}
+.dm-price-note{font-size:11px;color:var(--light);font-family:var(--fd);font-style:italic}
+.dm-actions{display:flex;align-items:center;gap:8px}
+.dm-qty-wrap{display:flex;align-items:center;gap:6px;background:var(--petal);padding:5px 12px;border-radius:20px}
+.dm-qty-btn{width:22px;height:22px;border-radius:50%;border:none;background:transparent;cursor:pointer;font-size:16px;color:var(--terra);font-weight:700;line-height:1;padding:0;display:flex;align-items:center;justify-content:center}
+.dm-qty-val{font-size:14px;font-weight:700;color:var(--dark);min-width:18px;text-align:center}
+.dm-order-btn{background:var(--terra);color:#fff;border:none;padding:11px 20px;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:2px;font-family:var(--fb);transition:all .25s}
+.dm-order-btn:hover{background:var(--rose)}
+.dm-order-btn:disabled{background:var(--light);cursor:not-allowed}
 
 @media(max-width:1024px){.chapter-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:768px){.chapter-grid{grid-template-columns:repeat(2,1fr);gap:12px}.chapter-header{flex-direction:column;align-items:flex-start}}
@@ -595,7 +629,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.52);padding:52px 5% 28px}
     <div class="tu"><span class="tu-n" id="tM">--</span><span class="tu-l">Min</span></div>
     <div class="tu"><span class="tu-n" id="tS">--</span><span class="tu-l">Sec</span></div>
   </div>
-  <button class="mbar-btn" id="evCta" data-order="dads-day-set">Order for Dad</button>
+  <button class="mbar-btn" id="evCta" data-order="salted-caramel">Order for Dad</button>
 </div>
 
 <!-- ====================================================
@@ -624,7 +658,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.52);padding:52px 5% 28px}
 
   <div class="nav-right">
     <a href="#story">About</a>
-    <a href="https://hitpay.shop/yoyoobaker/" class="btn btn-nav" target="_blank">🛒 Order Now</a>
+    <a href="#shop" class="btn btn-nav">Order Now</a>
     <button class="nav-toggle" aria-label="Menu" id="navToggleBtn">
       <span></span><span></span><span></span>
     </button>
@@ -635,7 +669,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.52);padding:52px 5% 28px}
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mmenu">
-  <button class="mm-close">✕</button>
+  <button class="mm-close" id="mmClose" onclick="document.getElementById('mmenu').classList.remove('open')">&#x2715;</button>
   <a href="#top" class="mm-link">🏠 Home</a>
   <a href="#shop" class="mm-link">🛍 Shop</a>
   <a href="#mothers" class="mm-link">👨 Father's Day</a>
@@ -643,7 +677,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.52);padding:52px 5% 28px}
   <a href="#library" class="mm-link">✦ Dessert Library</a>
   <a href="#story" class="mm-link">🌸 Our Story</a>
   <!-- ↓↓↓ REPLACE href -->
-  <a href="https://hitpay.shop/yoyoobaker/" class="mm-cta" target="_blank">🛒 Order Now on HitPay</a>
+
 </div>
 
 <!-- ====================================================
@@ -677,7 +711,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.52);padding:52px 5% 28px}
     </div>
     <div class="hero-btns">
       <!-- ↓↓↓ REPLACE hrefs with your HitPay URLs -->
-      <button class="btn btn-primary" onclick="window.open('https://hitpay.shop/yoyoobaker/','_blank')">Shop Now →</button>
+      <a class="btn btn-primary" href="#shop">Shop Now →</a>
       <a href="#mothers" class="btn btn-outline">Father's Day Gifts 👨</a>
     </div>
   </div>
@@ -735,146 +769,18 @@ footer{background:var(--dark);color:rgba(255,255,255,.52);padding:52px 5% 28px}
   </div>
 </section>
 
-<!-- ====================================================
-  THE CAKE MENU — 3 CHAPTERS, ALL 18 CAKES
-  ==================================================== -->
+<!-- THE CAKE MENU — driven by content.js -->
 <div id="shop" style="background:var(--petal)">
-  <div style="padding:72px 5% 0">
+  <div style="padding:36px 5% 0">
     <div class="sh reveal">
       <div class="sh-eye">The Cake Menu</div>
-      <h2 class="sh-title">18 cakes. 3 chapters.<br><em>One baker.</em></h2>
+      <h2 class="sh-title">Three chapters.<br><em>One baker.</em></h2>
       <div class="sh-line"></div>
-      <p style="font-size:13.5px;color:var(--mid);max-width:520px;margin:20px auto 0;line-height:1.8;font-family:var(--fd);font-style:italic">✅ Available now &nbsp;·&nbsp; 🔜 Coming soon &nbsp;·&nbsp; 🍵 Season limited</p>
     </div>
   </div>
-
-  <!-- ☁️ CHAPTER ONE: THE CLOUD -->
-  <div class="chapter">
-    <div class="chapter-header reveal">
-      <div class="chapter-left">
-        <span class="chapter-icon">☁️</span>
-        <span class="chapter-name">The <em>Cloud</em></span>
-        <span class="chapter-mood">For the ones who say they don't usually eat cake. Light, delicate, Japanese in spirit — not too sweet, not too loud, just right.</span>
-      </div>
-      <span class="chapter-count">7 cakes · RM118–148</span>
-    </div>
-    <div class="chapter-grid reveal">
-      <a href="#" class="pc" data-order="black-tea-cloud">
-        <div class="pc-img"><img src="https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184013/df-69aab7132749a_qsvk1l.jpg" alt="Black Tea Cloud Cake"><div class="pc-img-bg" style="background:linear-gradient(145deg,#d4c8e8,#7468a0)"></div><div class="pc-badges"><span class="badge b-hot">🔥 Fave</span></div></div>
-        <div class="pc-info"><div class="pc-name">Black Tea Cloud</div><div class="pc-sub">Earl Grey layers · Quietly extraordinary</div><div class="pc-foot"><div class="pc-prices"><span class="pc-price">RM118</span></div><span class="pc-cta">Order →</span></div></div>
-      </a>
-      <a href="#" class="pc" data-order="zen">
-        <div class="pc-img"><img src="https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184016/chatgpt-image-mar-13-2026-05-59-05-pm-69b3e051a4b4e_igjt9x.png" alt="Zen Cheesecake"><div class="pc-img-bg" style="background:linear-gradient(145deg,#e8e0d4,#a09080)"></div></div>
-        <div class="pc-info"><div class="pc-name">Zen Cheesecake</div><div class="pc-sub">No drama · Bean paste base · Clean finish</div><div class="pc-foot"><div class="pc-prices"><span class="pc-price">RM118</span></div><span class="pc-cta">Order →</span></div></div>
-      </a>
-      <a href="#" class="pc" data-order="cha-to-lemon">
-        <div class="pc-img"><img src="https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184015/lemon-cake-69baba44a57bf_fat0cg.png" alt="Cha To Lemon"><div class="pc-img-bg" style="background:linear-gradient(145deg,#f0e8b8,#c0a840)"></div></div>
-        <div class="pc-info"><div class="pc-name">Cha To Lemon <span style="font-family:var(--fd);font-style:italic;font-size:12px">茶と檸檬</span></div><div class="pc-sub">Green tea meets lemon curd · Garden morning</div><div class="pc-foot"><div class="pc-prices"><span class="pc-price">RM118</span></div><span class="pc-cta">Order →</span></div></div>
-      </a>
-      <a href="#" class="pc" data-order="uji-matcha">
-        <div class="pc-img"><img src="https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184017/chatgpt-image-apr-4-2026-12-13-49-am-69cfe76e0679f_wn5jjk.png" alt="Uji Matcha Mont Blanc"><div class="pc-img-bg" style="background:linear-gradient(145deg,#8fb870,#3d6029)"></div><div class="pc-badges"><span class="badge b-season">🍵 Apr–Jul</span><span class="badge b-low">⚠ Low Stock</span></div></div>
-        <div class="pc-info"><div class="pc-name">Uji Matcha Mont Blanc</div><div class="pc-sub">Season limited · Real Uji matcha · Gone in July</div><div class="pc-foot"><div class="pc-prices"><span class="pc-price">RM148</span></div><span class="pc-cta">Reserve →</span></div></div>
-      </a>
-      <!-- Coming Soon: Honeydew -->
-      <div class="pc-soon">
-        <div class="pc-soon-img"><div class="pc-soon-blur" style="background:linear-gradient(145deg,#c8f0d8,#80c8a0)"></div><div class="pc-soon-tag"><span>🔜 Coming Soon</span><strong>Honeydew & Cream</strong></div></div>
-        <div class="pc-info"><div class="pc-name" style="color:var(--light)">Honeydew & Cream</div><div class="pc-sub">Light, cooling · Not your usual sweet</div><div class="pc-foot"><div class="pc-prices"><span class="pc-price" style="color:var(--light)">RM118</span></div><span class="pc-cta" style="color:var(--blush)">Notify me</span></div></div>
-      </div>
-      <!-- Coming Soon: Yuzu -->
-      <div class="pc-soon">
-        <div class="pc-soon-img"><div class="pc-soon-blur" style="background:linear-gradient(145deg,#f8f0c8,#d4c060)"></div><div class="pc-soon-tag"><span>🔜 Coming Soon</span><strong>Yuzu 柚子</strong></div></div>
-        <div class="pc-info"><div class="pc-name" style="color:var(--light)">Yuzu — 柚子</div><div class="pc-sub">Japanese yuzu · Tart, floral, premium</div><div class="pc-foot"><div class="pc-prices"><span class="pc-price" style="color:var(--light)">RM128</span></div><span class="pc-cta" style="color:var(--blush)">Notify me</span></div></div>
-      </div>
-      <!-- Coming Soon: Shiro & Citrus -->
-      <div class="pc-soon">
-        <div class="pc-soon-img"><div class="pc-soon-blur" style="background:linear-gradient(145deg,#f0f0e0,#c8c8a0)"></div><div class="pc-soon-tag"><span>🔜 Coming Soon</span><strong>Shiro & Citrus</strong></div></div>
-        <div class="pc-info"><div class="pc-name" style="color:var(--light)">Shiro & Citrus</div><div class="pc-sub">Citrus atzuki · Quiet Kyoto bakery energy</div><div class="pc-foot"><div class="pc-prices"><span class="pc-price" style="color:var(--light)">RM118</span></div><span class="pc-cta" style="color:var(--blush)">Notify me</span></div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="chapter-divider"></div>
-
-  <!-- 🌙 CHAPTER TWO: AFTER DARK -->
-  <div class="chapter">
-    <div class="chapter-header reveal">
-      <div class="chapter-left">
-        <span class="chapter-icon">🌙</span>
-        <span class="chapter-name">After <em>Dark</em></span>
-        <span class="chapter-mood">Rich. Deep. The kind you eat slowly. For evenings, for celebrating, for people who know exactly what they want and aren't apologising for it.</span>
-      </div>
-      <span class="chapter-count">6 cakes · RM128–138</span>
-    </div>
-    <div class="chapter-grid reveal">
-      <a href="#" class="pc" data-order="midnight-cocoa">
-        <div class="pc-img"><img src="https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184014/chocolate-cake-69bab54c7bef4_xic25i.png" alt="Midnight Cocoa"><div class="pc-img-bg" style="background:linear-gradient(145deg,#d0a898,#603828)"></div><div class="pc-badges"><span class="badge b-hot">🔥 Popular</span></div></div>
-        <div class="pc-info"><div class="pc-name">Midnight Cocoa</div><div class="pc-sub">Three cocoa layers · For grown-up chocolate</div><div class="pc-foot"><div class="pc-prices"><span class="pc-price">RM138</span></div><span class="pc-cta">Order →</span></div></div>
-      </a>
-      <a href="#" class="pc" data-order="tira-mocha">
-        <div class="pc-img"><img src="https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184016/tiranocha-2-69b66c17375db_zymq9h.png" alt="Tira-Mocha"><div class="pc-img-bg" style="background:linear-gradient(145deg,#d4c0a8,#806040)"></div></div>
-        <div class="pc-info"><div class="pc-name">Tira-Mocha</div><div class="pc-sub">Tiramisu × mocha · Coffee lovers' pick</div><div class="pc-foot"><div class="pc-prices"><span class="pc-price">RM138</span></div><span class="pc-cta">Order →</span></div></div>
-      </a>
-      <a href="#" class="pc" data-order="black-sesame">
-        <div class="pc-img"><img src="https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184016/black-sesame-2-69bab519585ce_ljxk18.png" alt="Black Sesame Coconut Kuro"><div class="pc-img-bg" style="background:linear-gradient(145deg,#d4d0c8,#484440)"></div></div>
-        <div class="pc-info"><div class="pc-name">Black Sesame Coconut <span style="font-family:var(--fd);font-style:italic;font-size:12px">黒</span></div><div class="pc-sub">Nutty, earthy, impossible to describe</div><div class="pc-foot"><div class="pc-prices"><span class="pc-price">RM138</span></div><span class="pc-cta">Order →</span></div></div>
-      </a>
-      <!-- Coming Soon: HITAM -->
-      <div class="pc-soon">
-        <div class="pc-soon-img"><div class="pc-soon-blur" style="background:linear-gradient(145deg,#3a2828,#604848)"></div><div class="pc-soon-tag" style="background:rgba(30,16,14,.82)"><span style="color:rgba(255,255,255,.6)">🔜 Coming Soon</span><strong style="color:#fff">HITAM</strong></div></div>
-        <div class="pc-info"><div class="pc-name" style="color:var(--light)">HITAM</div><div class="pc-sub">Pulut hitam · Coconut · Malaysia reimagined</div><div class="pc-foot"><div class="pc-prices"><span class="pc-price" style="color:var(--light)">RM128</span></div><span class="pc-cta" style="color:var(--blush)">Notify me</span></div></div>
-      </div>
-      <!-- Coming Soon: Velvet Cocoa -->
-      <div class="pc-soon">
-        <div class="pc-soon-img"><div class="pc-soon-blur" style="background:linear-gradient(145deg,#c0a090,#602828)"></div><div class="pc-soon-tag"><span>🔜 Coming Soon</span><strong>Velvet Cocoa</strong></div></div>
-        <div class="pc-info"><div class="pc-name" style="color:var(--light)">Velvet Cocoa</div><div class="pc-sub">Deep moist chocolate · The one that stays with you</div><div class="pc-foot"><div class="pc-prices"><span class="pc-price" style="color:var(--light)">RM128</span></div><span class="pc-cta" style="color:var(--blush)">Notify me</span></div></div>
-      </div>
-      <!-- Coming Soon: Il Classico -->
-      <div class="pc-soon">
-        <div class="pc-soon-img"><div class="pc-soon-blur" style="background:linear-gradient(145deg,#d8c8b0,#806848)"></div><div class="pc-soon-tag"><span>🔜 Coming Soon</span><strong>Il Classico</strong></div></div>
-        <div class="pc-info"><div class="pc-name" style="color:var(--light)">Il Classico</div><div class="pc-sub">Tiramisu · Done properly. No reinvention needed.</div><div class="pc-foot"><div class="pc-prices"><span class="pc-price" style="color:var(--light)">RM135</span></div><span class="pc-cta" style="color:var(--blush)">Notify me</span></div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="chapter-divider"></div>
-
-  <!-- 🍯 CHAPTER THREE: THE SIGNATURE -->
-  <div class="chapter" style="padding-bottom:72px">
-    <div class="chapter-header reveal">
-      <div class="chapter-left">
-        <span class="chapter-icon">🍯</span>
-        <span class="chapter-name">The <em>Signature</em></span>
-        <span class="chapter-mood">The ones that built us. Tried once. Ordered again. Brought someone else along. This is where most people begin — and many never leave.</span>
-      </div>
-      <span class="chapter-count">5 cakes · RM118–138</span>
-    </div>
-    <div class="chapter-grid reveal" style="grid-template-columns:repeat(5,1fr)">
-      <a href="#" class="pc" data-order="salted-caramel">
-        <div class="pc-img"><img src="https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184018/chatgpt-image-mar-14-2026-10-58-14-am-69b4d8c0cca3f_wugfys.png" alt="Salted Caramel Cheesecake"><div class="pc-img-bg" style="background:linear-gradient(145deg,#e8d5c0,#8b5e3c)"></div><div class="pc-badges"><span class="badge b-hot">🔥 No.1</span></div></div>
-        <div class="pc-info"><div class="pc-name">Salted Caramel Cheesecake</div><div class="pc-sub">4 variants · The one that started it all</div><div class="pc-foot"><div class="pc-prices"><span class="pc-price">RM138</span></div><span class="pc-cta">Order →</span></div></div>
-      </a>
-      <a href="#" class="pc" data-order="dirty-peanut">
-        <div class="pc-img"><img src="https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184016/dirty-peanut-cheesecake-69b4e242f193e_khbz1a.png" alt="Dirty Peanut Cheesecake"><div class="pc-img-bg" style="background:linear-gradient(145deg,#d4b888,#8b6030)"></div><div class="pc-badges"><span class="badge b-hot">🔥 Dad Fave</span></div></div>
-        <div class="pc-info"><div class="pc-name">Dirty Peanut Cheesecake</div><div class="pc-sub">A name that raised eyebrows. A taste that answered.</div><div class="pc-foot"><div class="pc-prices"><span class="pc-price">RM118</span></div><span class="pc-cta">Order →</span></div></div>
-      </a>
-      <!-- Coming Soon: Bana -->
-      <div class="pc-soon">
-        <div class="pc-soon-img"><div class="pc-soon-blur" style="background:linear-gradient(145deg,#f8e8a0,#d0a830)"></div><div class="pc-soon-tag"><span>🔜 Coming Soon</span><strong>Bana Cheesecake</strong></div></div>
-        <div class="pc-info"><div class="pc-name" style="color:var(--light)">Bana Cheesecake</div><div class="pc-sub">Banana × cream cheese · Comfort that grew up</div><div class="pc-foot"><div class="pc-prices"><span class="pc-price" style="color:var(--light)">RM118</span></div><span class="pc-cta" style="color:var(--blush)">Notify me</span></div></div>
-      </div>
-      <!-- Coming Soon: Smoke & Coconut -->
-      <div class="pc-soon">
-        <div class="pc-soon-img"><div class="pc-soon-blur" style="background:linear-gradient(145deg,#d0c0a8,#706050)"></div><div class="pc-soon-tag"><span>🔜 Coming Soon</span><strong>Smoke & Coconut</strong></div></div>
-        <div class="pc-info"><div class="pc-name" style="color:var(--light)">Smoke & Coconut</div><div class="pc-sub">Burnt cheesecake · Mocha · Coconut</div><div class="pc-foot"><div class="pc-prices"><span class="pc-price" style="color:var(--light)">RM138</span></div><span class="pc-cta" style="color:var(--blush)">Notify me</span></div></div>
-      </div>
-      <!-- Coming Soon: La Brûlée -->
-      <div class="pc-soon">
-        <div class="pc-soon-img"><div class="pc-soon-blur" style="background:linear-gradient(145deg,#f0e8d0,#c8a860)"></div><div class="pc-soon-tag"><span>🔜 Coming Soon</span><strong>La Brûlée</strong></div></div>
-        <div class="pc-info"><div class="pc-name" style="color:var(--light)">La Brûlée</div><div class="pc-sub">Crème brûlée cheesecake · The crack of the spoon</div><div class="pc-foot"><div class="pc-prices"><span class="pc-price" style="color:var(--light)">RM138</span></div><span class="pc-cta" style="color:var(--blush)">Notify me</span></div></div>
-      </div>
-    </div>
-  </div>
+  <div id="cakeMenu" style="padding-bottom:48px"></div>
 </div>
+
 <!-- ====================================================
   SEASONAL BANNER
   ==================================================== -->
@@ -1119,42 +1025,24 @@ footer{background:var(--dark);color:rgba(255,255,255,.52);padding:52px 5% 28px}
         </div>
       </div>
       <!-- ↓↓↓ REPLACE href with HitPay workshop product URL -->
-      <button class="btn btn-primary" data-order="tira-mocha-ws">Book Workshop Slot &rarr;</button>
+      <a class="btn btn-primary" data-order="tira-mocha-ws">Book Workshop Slot &rarr;</button>
     </div>
   </div>
 </section>
 
-<!-- ====================================================
-  OUR STORY
-  ==================================================== -->
-<section class="story reveal" id="story">
-  <div class="story-img-wrap reveal">
-    <div class="story-img">
-      <!-- ↓↓↓ REPLACE src with a real photo of Yoyo or the bakery -->
-      <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" alt="Yoyo Baker" onerror="this.style.display='none'">
-      <div class="story-img-bg"></div>
-    </div>
-    <div class="story-badge"><span class="s-num">5+</span><span class="s-lbl">Years of craft</span></div>
-    <div class="story-deco">🌸</div>
+<!-- OUR STORY TEASER -->
+<div class="reveal" id="story" style="padding:52px 5%;background:var(--petal);display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap">
+  <div style="max-width:600px">
+    <div style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);font-weight:600;margin-bottom:8px">Our Story</div>
+    <h2 style="font-family:var(--fd);font-size:clamp(22px,3vw,38px);font-weight:400;color:var(--dark);margin-bottom:10px">Japan-trained. Halal.<br><em style="font-style:italic;color:var(--rose)">Made with heart.</em></h2>
+    <p style="font-size:13px;line-height:1.8;color:var(--mid);font-family:var(--fd);font-style:italic">Hi, I'm Yoyo. I trained as a patissier and flower art instructor in Japan and came back to Malaysia to share Japanese confectionery the right way &mdash; halal, no preservatives, and healthier with our signature bean paste cream.</p>
   </div>
-  <div>
-    <div class="sh left reveal">
-      <div class="sh-eye">Our Story</div>
-      <h2 class="sh-title">Made by Yoyo,<br><em>for you.</em></h2>
-      <div class="sh-line"></div>
-    </div>
-    <p class="s-body" style="margin-top:22px">Hi, I'm Yoyo — founder of Yoyoo Baker. I trained as a <strong>patissier and flower art instructor in Japan</strong>, and came back to Malaysia with one mission: to share Japanese confectionery in a way that's accessible, halal, and genuinely healthier.</p>
-    <p class="s-body">I created my <strong>signature bean paste cream</strong> to replace fondant and heavy buttercream. Everyone can enjoy our cakes — with less sugar, no artificial preservatives, and flavours that feel fresh and real.</p>
-    <div class="creds">
-      <div class="cred"><div class="cred-dot"></div>JP Certified Patissier, Japan</div>
-      <div class="cred"><div class="cred-dot"></div>JP Certified Flower Piping (Bean Paste), Japan</div>
-      <div class="cred"><div class="cred-dot"></div>Halal Certified Ingredients (JM1011522-T)</div>
-      <div class="cred"><div class="cred-dot"></div>Based in Setia Alam, Klang since 2019</div>
-    </div>
-    <!-- ↓↓↓ REPLACE href with your WhatsApp link: https://wa.me/60XXXXXXXXX -->
-    <a href="https://wa.me/60123771639" class="btn btn-outline" target="_blank">💬 Talk To Us →</a>
+  <div style="flex-shrink:0">
+    <a href="story.html" class="btn btn-primary" style="white-space:nowrap">Our Story &rarr;</a>
   </div>
-</section>
+</div>
+
+
 
 <!-- ====================================================
   FOOTER
@@ -1225,9 +1113,37 @@ footer{background:var(--dark);color:rgba(255,255,255,.52);padding:52px 5% 28px}
 <a href="https://wa.me/60123771639?text=Hi%20Yoyoo%20Baker!%20I'd%20like%20to%20order%20a%20cake%20%F0%9F%8E%82"
    class="wa-btn" target="_blank" aria-label="Chat on WhatsApp">
   <div class="wa-tooltip">Chat to order 💬</div>
-  💬
+  <svg viewBox="0 0 24 24" fill="white" width="26" height="26"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
+
+<!-- CAKE DETAIL MODAL -->
+<div class="detail-overlay" id="detailOverlay">
+  <div class="detail-modal">
+    <div class="dm-img">
+      <img id="dmImg" src="" alt="" style="display:none">
+      <div class="dm-img-bg" id="dmBg"></div>
+      <button class="dm-close-btn" id="dmClose">&#x2715;</button>
+      <span class="dm-status-badge" id="dmBadge"></span>
+    </div>
+    <div class="dm-body">
+      <div class="dm-chapter" id="dmChapter"></div>
+      <div class="dm-name" id="dmName"></div>
+      <div class="dm-desc" id="dmDesc"></div>
+      <div class="dm-footer">
+        <div><span class="dm-price" id="dmPrice"></span><span class="dm-price-note">7 inch whole cake</span></div>
+        <div class="dm-actions">
+          <div class="dm-qty-wrap">
+            <button class="dm-qty-btn" id="dmMinus">&#8722;</button>
+            <span class="dm-qty-val" id="dmQty">1</span>
+            <button class="dm-qty-btn" id="dmPlus">&#43;</button>
+          </div>
+          <button class="dm-order-btn" id="dmOrderBtn">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- 3-STEP CHECKOUT PORTAL -->
 <div class="co-overlay" id="coOverlay">
@@ -1326,7 +1242,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.52);padding:52px 5% 28px}
 <!-- MOBILE STICKY CTA -->
 <div class="mobile-cta">
   <div class="mcta-row">
-    <button class="btn btn-primary" data-order="salted-caramel" style="flex:2">Order Now</button>
+    <a class="btn btn-primary" data-order="salted-caramel" style="flex:2">Order Now</button>
     <a href="https://wa.me/60123771639" class="btn btn-outline" target="_blank" rel="noopener" style="flex:1">WhatsApp</a>
   </div>
 </div>
@@ -1438,13 +1354,22 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = data.url;
       } else {
         g('coConfirm').style.display = 'flex';
-        g('coError').style.display = 'block';
+        // Show the actual error from HitPay so we can diagnose
+        var errDetail = data.hitpay_message || data.error || 'Unknown error';
+        var errEl = g('coError');
+        errEl.innerHTML = '<strong style="display:block;margin-bottom:4px">Payment failed (Status: ' + (data.hitpay_status || '?') + ')</strong>' +
+          '<span style="font-size:11.5px;word-break:break-all">' + errDetail + '</span><br><br>' +
+          '<span>Please <a href="https://wa.me/60123771639" target="_blank" style="color:var(--terra);font-weight:600">WhatsApp Yoyo</a> to order.</span>';
+        errEl.style.display = 'block';
       }
     })
-    .catch(function() {
+    .catch(function(err) {
       g('coLoading').style.display = 'none';
       g('coConfirm').style.display = 'flex';
-      g('coError').style.display = 'block';
+      var errEl = g('coError');
+      errEl.innerHTML = '<strong style="display:block;margin-bottom:4px">Connection error</strong>' +
+        '<span>Please <a href="https://wa.me/60123771639" target="_blank" style="color:var(--terra);font-weight:600">WhatsApp Yoyo</a> to order.</span>';
+      errEl.style.display = 'block';
     });
   }
 
@@ -1546,6 +1471,121 @@ document.addEventListener('DOMContentLoaded', function() {
       var t = document.querySelector(h); if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'}); }
     });
   });
+
+
+  /* === EXTRA PRODUCTS === */
+  P['dads-set']   = { name:"Dad's Day Set", sub:"Father's Day Special", price:210, img:'https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184018/chatgpt-image-mar-14-2026-10-58-14-am-69b4d8c0cca3f_wugfys.png', bg:'linear-gradient(145deg,#e8d5c0,#8b5e3c)' };
+  P['workshop-1'] = { name:'The First Petal', sub:'1-Hour Flower Piping', price:88, img:'https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184017/chatgpt-image-apr-4-2026-12-13-49-am-69cfe76e0679f_wn5jjk.png', bg:'linear-gradient(145deg,#dde8f0,#5a7e9e)' };
+
+  /* === CAKE MENU === */
+  var CHM = {
+    cloud:     { title:'The Cloud',      icon:'&#9925;',   mood:'Light, delicate, Japanese in spirit. For people who find joy in subtlety.' },
+    afterdark: { title:'After Dark',     icon:'&#127769;', mood:'Rich. Deep. The kind you eat slowly. For people who know what they want.' },
+    signature: { title:'The Signature',  icon:'&#127855;', mood:'The ones that built us. Tried once. Ordered again. Brought someone else along.' },
+    seasonal:  { title:"Season's Story", icon:'&#127861;', mood:'These cakes exist for a reason. They are here now. Then they are gone.' }
+  };
+  var CHO = ['cloud','afterdark','signature','seasonal'];
+
+  function buildCakeMenu() {
+    if (!window.SITE || !SITE.cakes) { setTimeout(buildCakeMenu, 200); return; }
+    var out = '';
+    CHO.forEach(function(id) {
+      var m = CHM[id];
+      var cs = SITE.cakes.filter(function(c){ return c.chapter === id; });
+      if (!cs.length) return;
+      out += '<div class="chapter">';
+      out += '<div class="chapter-header reveal"><div class="chapter-left">';
+      out += '<span class="chapter-icon">' + m.icon + '</span>';
+      out += '<span class="chapter-name">' + m.title + '</span>';
+      out += '<span class="chapter-mood">' + m.mood + '</span></div>';
+      out += '<div class="c-nav"><button class="c-btn" onclick="scrollCar(this,-1)">&#8592;</button>';
+      out += '<button class="c-btn" onclick="scrollCar(this,1)">&#8594;</button></div></div>';
+      out += '<div class="chapter-grid reveal">';
+      cs.forEach(function(c) {
+        if (c.status === 'coming-soon') {
+          out += '<div class="pc" style="opacity:.68;pointer-events:none">';
+          out += '<div class="pc-img"><div class="pc-img-bg" style="background:' + c.bg + '"></div>';
+          out += '<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(250,247,242,.86);z-index:2;gap:4px">';
+          out += '<span style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--light)">Coming Soon</span>';
+          out += '<strong style="font-family:var(--fd);font-size:14px;color:var(--dark);text-align:center;padding:0 10px;line-height:1.3">' + c.name + '</strong>';
+          out += '</div></div>';
+          out += '<div class="pc-info"><div class="pc-name" style="color:var(--light)">' + c.name + '</div>';
+          out += '<div class="pc-sub">Coming soon</div>';
+          out += '<div class="pc-foot"><div class="pc-foot-row"><span class="pc-price" style="color:var(--light)">RM' + c.price + '</span></div></div></div></div>';
+        } else {
+          out += '<a href="#" class="pc" data-order="' + c.key + '">';
+          out += '<div class="pc-img" style="position:relative">';
+          if (c.img) out += '<img src="' + c.img + '" alt="' + c.name + '">';
+          out += '<div class="pc-img-bg" style="background:' + c.bg + '"></div>';
+          out += '<div class="pc-badges"><span class="badge ' + (c.status==='seasonal'?'b-season">&nbsp;Seasonal':'b-hot">Available') + '</span></div>';
+          out += '</div><div class="pc-info">';
+          out += '<div class="pc-name">' + c.name + '</div>';
+          var sd = c.desc ? (c.desc.length>55?c.desc.substring(0,55)+'...':c.desc) : '';
+          out += '<div class="pc-sub">' + sd + '</div>';
+          out += '<div class="pc-foot"><div class="pc-foot-row">';
+          out += '<span class="pc-price">RM' + c.price + '</span>';
+          out += '<button class="btn-detail" onclick="event.preventDefault();event.stopPropagation();openDet(\'' + c.key + '\')">Details</button>';
+          out += '</div></div></div></a>';
+        }
+      });
+      out += '</div></div><div class="chapter-divider"></div>';
+    });
+    var el = document.getElementById('cakeMenu');
+    if (el) { el.innerHTML = out; reobs(); }
+  }
+
+  function scrollCar(btn, dir) {
+    var g2 = btn.closest('.chapter').querySelector('.chapter-grid');
+    if (g2) g2.scrollBy({ left: dir * 260, behavior: 'smooth' });
+  }
+
+  function reobs() {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(function(el) { ro.observe(el); });
+  }
+
+  /* === DETAIL MODAL === */
+  var _dk = null, _dq = 1;
+
+  function openDet(key) {
+    var cake = null;
+    if (window.SITE && SITE.cakes) {
+      for (var i=0;i<SITE.cakes.length;i++) { if(SITE.cakes[i].key===key){cake=SITE.cakes[i];break;} }
+    }
+    if (!cake) cake = P[key];
+    if (!cake) return;
+    _dk = key; _dq = 1;
+    var img=g('dmImg'),bg=g('dmBg'),badge=g('dmBadge');
+    var ch=g('dmChapter'),nm=g('dmName'),dsc=g('dmDesc');
+    var pr=g('dmPrice'),qt=g('dmQty'),ob=g('dmOrderBtn');
+    if(img){img.src=cake.img||'';img.style.display=cake.img?'block':'none';}
+    if(bg) bg.style.background=cake.bg||'';
+    if(badge){
+      var s=cake.status||'available';
+      badge.textContent=s==='seasonal'?'Seasonal':s==='coming-soon'?'Coming Soon':'Available';
+      badge.style.background=s==='seasonal'?'#b5604a':s==='coming-soon'?'rgba(30,26,24,.6)':'#6b8050';
+    }
+    if(ch)  ch.textContent=(cake.chapter||'').toUpperCase().replace('-',' ');
+    if(nm)  nm.textContent=cake.name||'';
+    if(dsc) dsc.textContent=cake.desc||cake.sub||'';
+    if(pr)  pr.textContent='RM'+(cake.price||'');
+    if(qt)  qt.textContent='1';
+    if(ob){ob.disabled=cake.status==='coming-soon';ob.textContent=cake.status==='coming-soon'?'Coming Soon':'Order Now';}
+    g('detailOverlay').classList.add('active');
+    document.body.style.overflow='hidden';
+  }
+
+  function closeDet(){g('detailOverlay').classList.remove('active');document.body.style.overflow='';}
+
+  (function(){
+    var c=g('dmClose'),ov=g('detailOverlay'),mi=g('dmMinus'),pl=g('dmPlus'),ob=g('dmOrderBtn');
+    if(c)  c.addEventListener('click',closeDet);
+    if(ov) ov.addEventListener('click',function(e){if(e.target===this)closeDet();});
+    if(mi) mi.addEventListener('click',function(){if(_dq>1){_dq--;g('dmQty').textContent=_dq;}});
+    if(pl) pl.addEventListener('click',function(){_dq++;g('dmQty').textContent=_dq;});
+    if(ob) ob.addEventListener('click',function(){if(!_dk)return;closeDet();openCheckout(_dk);});
+  })();
+
+  buildCakeMenu();
 
 }); // DOMContentLoaded
 </script>
