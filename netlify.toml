@@ -1,14 +1,15 @@
 # ============================================================
-# netlify.toml — Yoyoo Baker Netlify Configuration
-# This file tells Netlify where your function lives
-# Place this in the ROOT of your project folder
+# netlify.toml — Yoyoo Baker
+# Place this in the ROOT of your GitHub repository
 # ============================================================
 
 [build]
   publish   = "."
   functions = "netlify/functions"
 
-# Prevents Netlify from showing 404 on page refresh
+[build.environment]
+  NODE_VERSION = "18"
+
 [[redirects]]
   from   = "/*"
   to     = "/index.html"
