@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story — Yoyoo Baker</title>
+<meta name="description" content="The story behind Yoyoo Baker — a Japan-trained patissier bringing Japanese confectionery to Setia Alam, Klang. Halal certified, no preservatives.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#faf7f2;--petal:#f5e6df;--blush:#e8c9bc;--rose:#c97e6e;
+  --terra:#b5604a;--dark:#1e1a18;--mid:#6b5c55;--light:#9e8a82;
+  --gold:#c8a96e;--matcha:#6b8050;
+  --fd:'Cormorant Garamond',serif;--fb:'Jost',sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--fb);background:var(--cream);color:var(--dark)}
+
+/* NAV */
+nav{background:var(--cream);border-bottom:1px solid rgba(181,96,74,.12);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px)}
+.nav-back{display:flex;align-items:center;gap:8px;color:var(--mid);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;transition:color .2s}
+.nav-back:hover{color:var(--terra)}
+.logo{font-family:var(--fd);font-size:18px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--dark)}
+.nav-order{background:var(--terra);color:#fff;padding:8px 18px;border-radius:2px;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .2s}
+.nav-order:hover{background:var(--rose)}
+
+/* HERO */
+.story-hero{background:linear-gradient(135deg,var(--petal) 0%,var(--cream) 60%);padding:80px 5% 60px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-text{}
+.hero-eye{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.hero-eye::after{content:'';width:32px;height:1px;background:var(--terra);display:inline-block}
+.hero-title{font-family:var(--fd);font-size:clamp(38px,5vw,64px);font-weight:400;line-height:1.08;color:var(--dark);margin-bottom:16px}
+.hero-title em{font-style:italic;color:var(--rose)}
+.hero-sub{font-size:14px;line-height:1.9;color:var(--mid);max-width:440px}
+.hero-img-wrap{position:relative}
+.hero-img{width:100%;aspect-ratio:4/5;border-radius:4px;overflow:hidden;box-shadow:20px 20px 60px rgba(181,96,74,.15);background:linear-gradient(145deg,#f0d8c8,#c89878)}
+.hero-badge{position:absolute;bottom:-16px;left:-16px;background:var(--dark);color:#fff;padding:16px 20px;width:140px}
+.hero-badge-num{font-family:var(--fd);font-size:32px;font-weight:300;line-height:1;display:block}
+.hero-badge-lbl{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin-top:4px}
+.hero-deco{position:absolute;top:-14px;right:-14px;width:80px;height:80px;border:2px solid var(--blush);border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--petal);font-size:26px}
+
+/* CONTENT SECTIONS */
+section{padding:72px 5%}
+section:nth-child(even){background:var(--petal)}
+
+.s-label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);font-weight:600;margin-bottom:12px}
+.s-title{font-family:var(--fd);font-size:clamp(28px,3.5vw,44px);font-weight:400;color:var(--dark);line-height:1.15;margin-bottom:8px}
+.s-title em{font-style:italic;color:var(--rose)}
+.s-line{width:40px;height:2px;background:linear-gradient(90deg,var(--terra),var(--blush));margin-bottom:32px}
+.s-body{font-size:14px;line-height:1.9;color:var(--mid);max-width:580px;margin-bottom:18px}
+.s-body strong{color:var(--dark);font-weight:600}
+
+/* TWO COLUMN */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+
+/* CREDENTIALS */
+.creds{display:flex;flex-direction:column;gap:10px;margin:24px 0}
+.cred{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--mid);font-family:var(--fd);font-style:italic}
+.cred-dot{width:6px;height:6px;background:var(--terra);border-radius:50%;flex-shrink:0}
+
+/* BEAN PASTE CALLOUT */
+.callout{background:var(--dark);color:#fff;padding:48px;border-left:4px solid var(--gold);margin:40px 0;position:relative;overflow:hidden}
+.callout::before{content:'"';font-family:var(--fd);font-size:180px;color:rgba(255,255,255,.04);position:absolute;top:-40px;right:20px;line-height:1;user-select:none}
+.callout-text{font-family:var(--fd);font-size:clamp(18px,2.5vw,26px);font-weight:300;font-style:italic;line-height:1.6;color:rgba(255,255,255,.88);position:relative;z-index:1}
+.callout-attr{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:16px;font-family:var(--fb);font-style:normal;position:relative;z-index:1}
+
+/* PHILOSOPHY GRID */
+.phil-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.phil-card{background:#fff;padding:28px 22px;border-left:3px solid var(--blush)}
+.phil-icon{font-size:26px;margin-bottom:12px;display:block}
+.phil-title{font-size:14px;font-weight:700;color:var(--dark);margin-bottom:6px;letter-spacing:.05em}
+.phil-desc{font-size:12.5px;color:var(--light);line-height:1.6}
+
+/* CTA */
+.story-cta{background:var(--dark);padding:72px 5%;text-align:center}
+.story-cta h2{font-family:var(--fd);font-size:clamp(28px,4vw,48px);font-weight:400;color:#fff;margin-bottom:12px}
+.story-cta h2 em{font-style:italic;color:var(--gold)}
+.story-cta p{font-size:14px;color:rgba(255,255,255,.55);max-width:480px;margin:0 auto 36px;line-height:1.8;font-family:var(--fd);font-style:italic}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;font-family:var(--fb);padding:14px 30px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all .25s;cursor:pointer;border:none}
+.btn-white{background:#fff;color:var(--dark)}
+.btn-white:hover{background:var(--petal);transform:translateY(-2px)}
+.btn-outline-white{background:transparent;color:rgba(255,255,255,.7);border:1.5px solid rgba(255,255,255,.3)}
+.btn-outline-white:hover{border-color:#fff;color:#fff;transform:translateY(-2px)}
+
+/* FOOTER */
+.story-footer{background:var(--dark);color:rgba(255,255,255,.4);padding:24px 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(255,255,255,.08)}
+.story-footer span{font-size:11.5px}
+.story-footer a{color:rgba(255,255,255,.4);text-decoration:none;font-size:11.5px;transition:color .2s}
+.story-footer a:hover{color:#fff}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .story-hero{grid-template-columns:1fr;gap:32px;padding:48px 5% 40px}
+  .hero-badge{display:none}
+  .two-col{grid-template-columns:1fr;gap:28px}
+  .phil-grid{grid-template-columns:1fr}
+  .callout{padding:28px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-back">&#8592; Back to Website</a>
+  <span class="logo">🌸 Yoyoo Baker</span>
+  <a href="https://hitpay.shop/yoyoobaker/" class="nav-order" target="_blank">Order Now</a>
+</nav>
+
+<!-- HERO -->
+<div class="story-hero">
+  <div class="hero-text">
+    <div class="hero-eye">Our Story</div>
+    <h1 class="hero-title">Made by Yoyo,<br><em>for you.</em></h1>
+    <p class="hero-sub">Hello, I'm Yoyo — founder of Yoyoo Baker. I trained as a patissier and flower art instructor in Japan, and came back to Malaysia with one mission: to share the joy of Japanese-style confectionery in a way that's accessible, halal, and genuinely healthier.</p>
+  </div>
+  <div class="hero-img-wrap">
+    <div class="hero-img"></div>
+    <div class="hero-badge"><span class="hero-badge-num">5+</span><span class="hero-badge-lbl">Years of craft</span></div>
+    <div class="hero-deco">🌸</div>
+  </div>
+</div>
+
+<!-- THE BEGINNING -->
+<section>
+  <div class="two-col">
+    <div>
+      <div class="s-label">Where it started</div>
+      <h2 class="s-title">Japan changed<br>everything <em>for me.</em></h2>
+      <div class="s-line"></div>
+      <p class="s-body">I have been graduated on cooking and confectionery school in Japan. At the same time, I'm also an Instructor of Flower Cake and Knife Art. What I found in Japan wasn't just technique — it was a philosophy. That ingredients matter. That less sweetness means more flavour. That the way a cake looks is as important as how it tastes.</p>
+      <p class="s-body">I came back to Malaysia carrying that philosophy and a question: <strong>why do Malaysian customers have to choose between beautiful and healthy?</strong></p>
+    </div>
+    <div>
+      <div style="background:var(--petal);padding:40px;border-radius:4px">
+        <div class="s-label" style="margin-bottom:20px">Certified by Japan</div>
+        <div class="creds">
+          <div class="cred"><div class="cred-dot"></div>JP Certified Patissier, Japan</div>
+          <div class="cred"><div class="cred-dot"></div>JP Certified Flower Piping (Bean Paste), Japan</div>
+          <div class="cred"><div class="cred-dot"></div>Flower Cake Instructor</div>
+          <div class="cred"><div class="cred-dot"></div>Knife Art Instructor</div>
+          <div class="cred"><div class="cred-dot"></div>Halal Certified Ingredients (JM1011522-T)</div>
+          <div class="cred"><div class="cred-dot"></div>Based in Setia Alam, Klang since 2019</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE BEAN PASTE DIFFERENCE -->
+<section>
+  <div class="s-label">The big idea</div>
+  <h2 class="s-title">We replaced <em>buttercream.</em></h2>
+  <div class="s-line"></div>
+  <p class="s-body">So I created my own unique recipe using <strong>Signature Bean Paste</strong> to replace the traditional fondant and buttercream. Everyone can serve our cakes — healthier and lower in calories, without sacrificing a single moment of joy.</p>
+
+  <div class="callout">
+    <div class="callout-text">"I wanted to make cakes that people could eat without guilt — without the heaviness, without the artificial sweetness. Bean paste gave me that. It's lighter, cleaner, and more beautiful to work with."</div>
+    <div class="callout-attr">— Yoyo, Founder of Yoyoo Baker</div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:680px">
+    <div style="background:#fff;padding:24px;border-radius:4px">
+      <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--terra);font-weight:600;margin-bottom:8px">Traditional</div>
+      <div style="font-family:var(--fd);font-size:17px;color:var(--mid);">Buttercream &amp; fondant — heavy, overly sweet, high calorie</div>
+    </div>
+    <div style="background:var(--dark);padding:24px;border-radius:4px">
+      <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:8px">Yoyoo Baker</div>
+      <div style="font-family:var(--fd);font-size:17px;color:rgba(255,255,255,.85);">Signature bean paste — light, refined, lower calorie, more flavour</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE BELIEVE -->
+<section>
+  <div class="s-label">情绪价値</div>
+  <h2 class="s-title">We believe in<br><em>emotional value.</em></h2>
+  <div class="s-line"></div>
+  <p class="s-body">情绪价値 (qíngxù jiàzhí) — the value of feeling something. Not just eating cake. The moment the candles are blown out. The photo that gets saved. The friend who says "where did you get this?" We make cakes that create those moments.</p>
+
+  <div class="phil-grid">
+    <div class="phil-card">
+      <span class="phil-icon">🇯🇵</span>
+      <div class="phil-title">Japanese Technique</div>
+      <div class="phil-desc">Every cake is made using techniques Yoyo trained in Japan. The precision, the patience, and the respect for ingredients.</div>
+    </div>
+    <div class="phil-card">
+      <span class="phil-icon">✅</span>
+      <div class="phil-title">Halal &amp; Clean</div>
+      <div class="phil-desc">Halal certified ingredients (JM1011522-T). No preservatives. No artificial flavouring. Made fresh, always.</div>
+    </div>
+    <div class="phil-card">
+      <span class="phil-icon">🌿</span>
+      <div class="phil-title">Healthier by Design</div>
+      <div class="phil-desc">Signature bean paste replaces buttercream. Less sugar, less fat, more flavour. Guilt-free indulgence is not a compromise.</div>
+    </div>
+    <div class="phil-card">
+      <span class="phil-icon">🌸</span>
+      <div class="phil-title">Seasonal &amp; Intentional</div>
+      <div class="phil-desc">We follow the seasons like Japanese patisseries do. When a cake is gone, it's gone. That's what makes it worth having.</div>
+    </div>
+    <div class="phil-card">
+      <span class="phil-icon">🎨</span>
+      <div class="phil-title">Art You Can Eat</div>
+      <div class="phil-desc">JP-certified flower piping. Each cupcake is individually hand-piped. We don't use moulds. We use skill.</div>
+    </div>
+    <div class="phil-card">
+      <span class="phil-icon">🏡</span>
+      <div class="phil-title">Made in Klang</div>
+      <div class="phil-desc">Japan-trained but rooted in Malaysia. Setia Alam, Klang is home. The flavours we make honour both places equally.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="story-cta">
+  <h2>Ready to taste the <em>difference?</em></h2>
+  <p>Japan-trained. Halal certified. No preservatives. Made with 心を込めて — with heart.</p>
+  <div class="cta-row">
+    <a href="index.html#shop" class="btn btn-white">Browse the Menu</a>
+    <a href="https://wa.me/60123771639" class="btn btn-outline-white" target="_blank">Talk to Yoyo</a>
+  </div>
+</div>
+
+<div class="story-footer">
+  <span>© 2026 Yoyoo Baker (JM1011522-T)</span>
+  <a href="index.html">&#8592; Back to website</a>
+</div>
+
+</body>
+</html>
