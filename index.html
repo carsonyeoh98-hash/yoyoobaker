@@ -234,29 +234,56 @@ nav{background:rgba(250,247,242,.97);border-bottom:1px solid rgba(181,96,74,.12)
 .c-btn:hover{background:var(--terra);color:white;border-color:var(--terra)}
 .btn-detail{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--light);border:none;border-bottom:1px solid var(--blush);padding:0 0 1px;transition:all .2s;font-weight:500;cursor:pointer;background:none;font-family:var(--fb);display:inline-block}
 .btn-detail:hover{color:var(--mid);border-color:var(--mid)}
-/* DETAIL MODAL */
+/* DETAIL MODAL — Product Page */
 .detail-overlay{position:fixed;inset:0;background:rgba(20,16,14,.78);z-index:1000;display:none;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(4px)}
 .detail-overlay.active{display:flex}
-.detail-modal{background:#fff;width:100%;max-width:500px;border-radius:6px;overflow:hidden;box-shadow:0 24px 80px rgba(20,16,14,.35);max-height:92vh;overflow-y:auto}
-.dm-img{height:200px;position:relative;overflow:hidden}
-.dm-img img{width:100%;height:100%;object-fit:cover}
-.dm-img-bg{position:absolute;inset:0}
-.dm-close-btn{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.9);border:none;width:30px;height:30px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--mid);z-index:2}
-.dm-status-badge{position:absolute;bottom:12px;left:12px;padding:3px 9px;font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:2px;z-index:2;color:#fff}
-.dm-body{padding:20px}
-.dm-chapter{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);font-weight:600;margin-bottom:5px}
-.dm-name{font-family:var(--fd);font-size:21px;font-weight:500;color:var(--dark);margin-bottom:10px;line-height:1.2}
-.dm-desc{font-size:13px;line-height:1.85;color:var(--mid);margin-bottom:16px;font-family:var(--fd);font-style:italic}
-.dm-footer{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--petal);flex-wrap:wrap;gap:10px}
-.dm-price{font-size:20px;font-weight:700;color:var(--terra);font-family:var(--fd);display:block}
-.dm-price-note{font-size:11px;color:var(--light);font-family:var(--fd);font-style:italic}
-.dm-actions{display:flex;align-items:center;gap:8px}
-.dm-qty-wrap{display:flex;align-items:center;gap:6px;background:var(--petal);padding:5px 12px;border-radius:20px}
-.dm-qty-btn{width:22px;height:22px;border-radius:50%;border:none;background:transparent;cursor:pointer;font-size:16px;color:var(--terra);font-weight:700;line-height:1;padding:0;display:flex;align-items:center;justify-content:center}
-.dm-qty-val{font-size:14px;font-weight:700;color:var(--dark);min-width:18px;text-align:center}
-.dm-order-btn{background:var(--terra);color:#fff;border:none;padding:11px 20px;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:2px;font-family:var(--fb);transition:all .25s}
+.detail-modal{background:#fff;width:100%;max-width:820px;border-radius:6px;overflow:hidden;box-shadow:0 24px 80px rgba(20,16,14,.35);max-height:94vh;overflow-y:auto}
+.dm-layout{display:grid;grid-template-columns:1fr 1fr}
+.dm-gallery{position:relative;background:var(--petal)}
+.dm-main-img{width:100%;aspect-ratio:1;object-fit:cover;display:block;position:relative;z-index:1}
+.dm-main-bg{position:absolute;inset:0;z-index:0}
+.dm-thumbs{display:flex;gap:6px;padding:8px;background:rgba(0,0,0,.03)}
+.dm-thumb{width:56px;height:56px;border-radius:3px;object-fit:cover;cursor:pointer;border:2px solid transparent;transition:all .2s;opacity:.65}
+.dm-thumb:hover,.dm-thumb.active{border-color:var(--terra);opacity:1}
+.dm-close-btn{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.92);border:none;width:32px;height:32px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--mid);z-index:10}
+.dm-close-btn:hover{background:#fff;color:var(--dark)}
+.dm-info{padding:26px 24px;overflow-y:auto;max-height:80vh}
+.dm-crumb{font-size:10.5px;color:var(--light);margin-bottom:8px}
+.dm-crumb span{color:var(--mid)}
+.dm-name{font-family:var(--fd);font-size:24px;font-weight:500;color:var(--dark);margin-bottom:6px;line-height:1.2}
+.dm-price-tag{font-size:20px;font-weight:700;color:var(--terra);font-family:var(--fd);margin-bottom:12px;display:block}
+.dm-badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.dm-bdg{padding:3px 10px;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;color:#fff}
+.dm-bdg-halal{background:var(--matcha)}
+.dm-bdg-season{background:var(--terra)}
+.dm-subtitle{font-size:13px;font-weight:600;color:var(--dark);margin-bottom:4px;font-style:italic}
+.dm-desc{font-size:13px;line-height:1.85;color:var(--mid);margin-bottom:0}
+.dm-hr{height:1px;background:var(--petal);margin:14px 0}
+.dm-specs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:4px}
+.dm-spec strong{color:var(--dark);display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px;font-weight:700}
+.dm-spec span{font-size:12px;color:var(--mid)}
+.dm-detail-row{font-size:11.5px;color:var(--mid);margin-bottom:5px;line-height:1.6}
+.dm-detail-row b{color:var(--dark);font-weight:600;font-size:10.5px;letter-spacing:.06em}
+.dm-section{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin:12px 0 8px}
+.dm-addon-row{display:flex;align-items:center;gap:10px;padding:7px 0;cursor:pointer}
+.dm-addon-row input[type=checkbox]{width:16px;height:16px;accent-color:var(--terra);cursor:pointer}
+.dm-addon-row .lbl{font-size:12.5px;color:var(--dark);flex:1}
+.dm-addon-row .amt{font-size:12.5px;font-weight:600;color:var(--terra)}
+.dm-qty-area{margin:14px 0}
+.dm-qty-wrap{display:inline-flex;align-items:center;border:1.5px solid var(--blush);border-radius:24px;overflow:hidden}
+.dm-qty-btn{width:36px;height:36px;border:none;background:var(--petal);cursor:pointer;font-size:18px;color:var(--terra);font-weight:700;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.dm-qty-btn:hover{background:var(--blush)}
+.dm-qty-val{width:40px;height:36px;text-align:center;font-size:15px;font-weight:700;color:var(--dark);border:none;background:white;font-family:var(--fb);line-height:36px}
+.dm-total-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-top:1px solid var(--petal);margin-bottom:14px}
+.dm-total-lbl{font-size:12px;font-weight:600;color:var(--mid);letter-spacing:.1em;text-transform:uppercase}
+.dm-total-amt{font-size:22px;font-weight:700;color:var(--dark);font-family:var(--fd)}
+.dm-btn-row{display:flex;gap:10px}
+.dm-order-btn{flex:1;background:var(--terra);color:#fff;border:none;padding:14px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:3px;font-family:var(--fb);transition:all .25s;text-align:center}
 .dm-order-btn:hover{background:var(--rose)}
 .dm-order-btn:disabled{background:var(--light);cursor:not-allowed}
+.dm-wa-btn{padding:14px 18px;background:transparent;border:1.5px solid var(--blush);border-radius:3px;font-size:12px;font-weight:600;color:var(--mid);cursor:pointer;font-family:var(--fb);transition:all .2s;text-decoration:none;text-align:center;display:flex;align-items:center;justify-content:center}
+.dm-wa-btn:hover{border-color:var(--mid);color:var(--dark)}
+@media(max-width:768px){.dm-layout{grid-template-columns:1fr}.dm-info{max-height:none}.dm-main-img{aspect-ratio:4/3}.detail-modal{max-height:96vh}}
 
 @media(max-width:1024px){.chapter-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:768px){.chapter-grid{grid-template-columns:repeat(2,1fr);gap:12px}.chapter-header{flex-direction:column;align-items:flex-start}}
@@ -777,7 +804,198 @@ footer{background:var(--dark);color:rgba(255,255,255,.52);padding:52px 5% 28px}
       <div class="sh-line"></div>
     </div>
   </div>
-  <div id="cakeMenu" style="padding-bottom:48px"></div>
+  <div id="cakeMenu" style="padding-bottom:48px">
+<div class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-left">
+        <span class="chapter-icon">&#9925;</span>
+        <span class="chapter-name">The Cloud</span>
+        <span class="chapter-mood">Light, delicate, Japanese in spirit. For people who find joy in subtlety.</span>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button class="c-btn" onclick="scrollCar(this,-1)">&#8592;</button>
+        <button class="c-btn" onclick="scrollCar(this,1)">&#8594;</button>
+      </div>
+    </div>
+    <div class="chapter-grid">
+      <a href="#" class="pc" data-order="black-tea-cloud" style="flex:0 0 240px;scroll-snap-align:start">
+        <div class="pc-img" style="position:relative"><img src="https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184013/df-69aab7132749a_qsvk1l.jpg" alt="BLACK TEA CLOUD CAKE"><div class="pc-img-bg" style="background:linear-gradient(145deg,#d4c8e8,#7468a0)"></div><div class="pc-badges"><span class="badge b-hot">Available</span></div></div>
+        <div class="pc-info"><div class="pc-name">BLACK TEA CLOUD CAKE</div>
+        <div class="pc-sub">Earl Grey layers, soft and barely-there sweet...</div>
+        <div class="pc-foot"><div class="pc-foot-row"><span class="pc-price">RM118</span><span class="pc-cta">Order &#8594;</span></div>
+        <button class="btn-detail" onclick="event.preventDefault();event.stopPropagation();openDet('black-tea-cloud')">View Details</button>
+        </div></div></a>
+      <a href="#" class="pc" data-order="zen" style="flex:0 0 240px;scroll-snap-align:start">
+        <div class="pc-img" style="position:relative"><img src="https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184016/chatgpt-image-mar-13-2026-05-59-05-pm-69b3e051a4b4e_igjt9x.png" alt="ZEN CHEESECAKE"><div class="pc-img-bg" style="background:linear-gradient(145deg,#e8e0d4,#a09080)"></div><div class="pc-badges"><span class="badge b-hot">Available</span></div></div>
+        <div class="pc-info"><div class="pc-name">ZEN CHEESECAKE</div>
+        <div class="pc-sub">Smooth, barely-sweet cheesecake with bean paste base...</div>
+        <div class="pc-foot"><div class="pc-foot-row"><span class="pc-price">RM118</span><span class="pc-cta">Order &#8594;</span></div>
+        <button class="btn-detail" onclick="event.preventDefault();event.stopPropagation();openDet('zen')">View Details</button>
+        </div></div></a>
+      <a href="#" class="pc" data-order="morning-garden" style="flex:0 0 240px;scroll-snap-align:start">
+        <div class="pc-img" style="position:relative"><img src="https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184015/lemon-cake-69baba44a57bf_fat0cg.png" alt="MORNING GARDEN"><div class="pc-img-bg" style="background:linear-gradient(145deg,#f0e8b8,#c0a840)"></div><div class="pc-badges"><span class="badge b-hot">Available</span></div></div>
+        <div class="pc-info"><div class="pc-name">MORNING GARDEN</div>
+        <div class="pc-sub">Green tea meets hand-cut lemon curd...</div>
+        <div class="pc-foot"><div class="pc-foot-row"><span class="pc-price">RM118</span><span class="pc-cta">Order &#8594;</span></div>
+        <button class="btn-detail" onclick="event.preventDefault();event.stopPropagation();openDet('morning-garden')">View Details</button>
+        </div></div></a>
+      <div class="pc" style="opacity:.68;pointer-events:none;flex:0 0 240px;scroll-snap-align:start">
+        <div class="pc-img"><div class="pc-img-bg" style="background:linear-gradient(145deg,#c8f0d8,#80c8a0)"></div>
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(250,247,242,.86);z-index:2;gap:4px">
+        <span style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--light)">Coming Soon</span>
+        <strong style="font-family:var(--fd);font-size:14px;color:var(--dark);text-align:center;padding:0 10px;line-height:1.3">HONEYDEW AND CREAM</strong></div></div>
+        <div class="pc-info"><div class="pc-name" style="color:var(--light)">HONEYDEW AND CREAM</div>
+        <div class="pc-sub" style="color:var(--blush)">RM118</div></div></div>
+      <div class="pc" style="opacity:.68;pointer-events:none;flex:0 0 240px;scroll-snap-align:start">
+        <div class="pc-img"><div class="pc-img-bg" style="background:linear-gradient(145deg,#f8f0c8,#d4c060)"></div>
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(250,247,242,.86);z-index:2;gap:4px">
+        <span style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--light)">Coming Soon</span>
+        <strong style="font-family:var(--fd);font-size:14px;color:var(--dark);text-align:center;padding:0 10px;line-height:1.3">YUZU CAKE</strong></div></div>
+        <div class="pc-info"><div class="pc-name" style="color:var(--light)">YUZU CAKE</div>
+        <div class="pc-sub" style="color:var(--blush)">RM128</div></div></div>
+      <div class="pc" style="opacity:.68;pointer-events:none;flex:0 0 240px;scroll-snap-align:start">
+        <div class="pc-img"><div class="pc-img-bg" style="background:linear-gradient(145deg,#f0f0e0,#c8c8a0)"></div>
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(250,247,242,.86);z-index:2;gap:4px">
+        <span style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--light)">Coming Soon</span>
+        <strong style="font-family:var(--fd);font-size:14px;color:var(--dark);text-align:center;padding:0 10px;line-height:1.3">CITRUS CAKE</strong></div></div>
+        <div class="pc-info"><div class="pc-name" style="color:var(--light)">CITRUS CAKE</div>
+        <div class="pc-sub" style="color:var(--blush)">RM118</div></div></div>
+    </div>
+  </div>
+  <div class="chapter-divider"></div>
+<div class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-left">
+        <span class="chapter-icon">&#127769;</span>
+        <span class="chapter-name">After Dark</span>
+        <span class="chapter-mood">Rich. Deep. The kind you eat slowly. For people who know what they want.</span>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button class="c-btn" onclick="scrollCar(this,-1)">&#8592;</button>
+        <button class="c-btn" onclick="scrollCar(this,1)">&#8594;</button>
+      </div>
+    </div>
+    <div class="chapter-grid">
+      <a href="#" class="pc" data-order="midnight-cocoa" style="flex:0 0 240px;scroll-snap-align:start">
+        <div class="pc-img" style="position:relative"><img src="https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184014/chocolate-cake-69bab54c7bef4_xic25i.png" alt="MIDNIGHT COCOA"><div class="pc-img-bg" style="background:linear-gradient(145deg,#d0a898,#603828)"></div><div class="pc-badges"><span class="badge b-hot">Available</span></div></div>
+        <div class="pc-info"><div class="pc-name">MIDNIGHT COCOA</div>
+        <div class="pc-sub">Three layers of chocolate that converge...</div>
+        <div class="pc-foot"><div class="pc-foot-row"><span class="pc-price">RM138</span><span class="pc-cta">Order &#8594;</span></div>
+        <button class="btn-detail" onclick="event.preventDefault();event.stopPropagation();openDet('midnight-cocoa')">View Details</button>
+        </div></div></a>
+      <a href="#" class="pc" data-order="tira-mocha" style="flex:0 0 240px;scroll-snap-align:start">
+        <div class="pc-img" style="position:relative"><img src="https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184016/tiranocha-2-69b66c17375db_zymq9h.png" alt="TIRA-MOCHA CAKE"><div class="pc-img-bg" style="background:linear-gradient(145deg,#d4c0a8,#806040)"></div><div class="pc-badges"><span class="badge b-hot">Available</span></div></div>
+        <div class="pc-info"><div class="pc-name">TIRA-MOCHA CAKE</div>
+        <div class="pc-sub">Tiramisu and mocha, grown up together...</div>
+        <div class="pc-foot"><div class="pc-foot-row"><span class="pc-price">RM138</span><span class="pc-cta">Order &#8594;</span></div>
+        <button class="btn-detail" onclick="event.preventDefault();event.stopPropagation();openDet('tira-mocha')">View Details</button>
+        </div></div></a>
+      <a href="#" class="pc" data-order="black-sesame" style="flex:0 0 240px;scroll-snap-align:start">
+        <div class="pc-img" style="position:relative"><img src="https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184016/black-sesame-2-69bab519585ce_ljxk18.png" alt="BLACK SESAME COCONUT"><div class="pc-img-bg" style="background:linear-gradient(145deg,#d4d0c8,#484440)"></div><div class="pc-badges"><span class="badge b-hot">Available</span></div></div>
+        <div class="pc-info"><div class="pc-name">BLACK SESAME COCONUT</div>
+        <div class="pc-sub">Toasted black sesame, coconut cream, earthy...</div>
+        <div class="pc-foot"><div class="pc-foot-row"><span class="pc-price">RM138</span><span class="pc-cta">Order &#8594;</span></div>
+        <button class="btn-detail" onclick="event.preventDefault();event.stopPropagation();openDet('black-sesame')">View Details</button>
+        </div></div></a>
+      <div class="pc" style="opacity:.68;pointer-events:none;flex:0 0 240px;scroll-snap-align:start">
+        <div class="pc-img"><div class="pc-img-bg" style="background:linear-gradient(145deg,#3a2828,#604848)"></div>
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(250,247,242,.86);z-index:2;gap:4px">
+        <span style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--light)">Coming Soon</span>
+        <strong style="font-family:var(--fd);font-size:14px;color:var(--dark);text-align:center;padding:0 10px;line-height:1.3">HITAM</strong></div></div>
+        <div class="pc-info"><div class="pc-name" style="color:var(--light)">HITAM</div>
+        <div class="pc-sub" style="color:var(--blush)">RM128</div></div></div>
+      <div class="pc" style="opacity:.68;pointer-events:none;flex:0 0 240px;scroll-snap-align:start">
+        <div class="pc-img"><div class="pc-img-bg" style="background:linear-gradient(145deg,#c0a090,#602828)"></div>
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(250,247,242,.86);z-index:2;gap:4px">
+        <span style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--light)">Coming Soon</span>
+        <strong style="font-family:var(--fd);font-size:14px;color:var(--dark);text-align:center;padding:0 10px;line-height:1.3">VELVET COCOA</strong></div></div>
+        <div class="pc-info"><div class="pc-name" style="color:var(--light)">VELVET COCOA</div>
+        <div class="pc-sub" style="color:var(--blush)">RM128</div></div></div>
+    </div>
+  </div>
+  <div class="chapter-divider"></div>
+<div class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-left">
+        <span class="chapter-icon">&#127855;</span>
+        <span class="chapter-name">The Signature</span>
+        <span class="chapter-mood">The ones that built us. Tried once. Ordered again. Brought someone else along.</span>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button class="c-btn" onclick="scrollCar(this,-1)">&#8592;</button>
+        <button class="c-btn" onclick="scrollCar(this,1)">&#8594;</button>
+      </div>
+    </div>
+    <div class="chapter-grid">
+      <a href="#" class="pc" data-order="salted-caramel" style="flex:0 0 240px;scroll-snap-align:start">
+        <div class="pc-img" style="position:relative"><img src="https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184018/chatgpt-image-mar-14-2026-10-58-14-am-69b4d8c0cca3f_wugfys.png" alt="SALTED CARAMEL CHEESECAKE"><div class="pc-img-bg" style="background:linear-gradient(145deg,#e8d5c0,#8b5e3c)"></div><div class="pc-badges"><span class="badge b-hot">Available</span></div></div>
+        <div class="pc-info"><div class="pc-name">SALTED CARAMEL CHEESECAKE</div>
+        <div class="pc-sub">The one that started it all. 4 variants...</div>
+        <div class="pc-foot"><div class="pc-foot-row"><span class="pc-price">RM138</span><span class="pc-cta">Order &#8594;</span></div>
+        <button class="btn-detail" onclick="event.preventDefault();event.stopPropagation();openDet('salted-caramel')">View Details</button>
+        </div></div></a>
+      <a href="#" class="pc" data-order="dirty-peanut" style="flex:0 0 240px;scroll-snap-align:start">
+        <div class="pc-img" style="position:relative"><img src="https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184016/dirty-peanut-cheesecake-69b4e242f193e_khbz1a.png" alt="DIRTY PEANUT CHEESECAKE"><div class="pc-img-bg" style="background:linear-gradient(145deg,#d4b888,#8b6030)"></div><div class="pc-badges"><span class="badge b-hot">Available</span></div></div>
+        <div class="pc-info"><div class="pc-name">DIRTY PEANUT CHEESECAKE</div>
+        <div class="pc-sub">A name that raised eyebrows, a taste that answered...</div>
+        <div class="pc-foot"><div class="pc-foot-row"><span class="pc-price">RM118</span><span class="pc-cta">Order &#8594;</span></div>
+        <button class="btn-detail" onclick="event.preventDefault();event.stopPropagation();openDet('dirty-peanut')">View Details</button>
+        </div></div></a>
+      <div class="pc" style="opacity:.68;pointer-events:none;flex:0 0 240px;scroll-snap-align:start">
+        <div class="pc-img"><div class="pc-img-bg" style="background:linear-gradient(145deg,#f8e8a0,#d0a830)"></div>
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(250,247,242,.86);z-index:2;gap:4px">
+        <span style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--light)">Coming Soon</span>
+        <strong style="font-family:var(--fd);font-size:14px;color:var(--dark);text-align:center;padding:0 10px;line-height:1.3">BANANA CHEEZY CAKE</strong></div></div>
+        <div class="pc-info"><div class="pc-name" style="color:var(--light)">BANANA CHEEZY CAKE</div>
+        <div class="pc-sub" style="color:var(--blush)">RM118</div></div></div>
+      <div class="pc" style="opacity:.68;pointer-events:none;flex:0 0 240px;scroll-snap-align:start">
+        <div class="pc-img"><div class="pc-img-bg" style="background:linear-gradient(145deg,#d0c0a8,#706050)"></div>
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(250,247,242,.86);z-index:2;gap:4px">
+        <span style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--light)">Coming Soon</span>
+        <strong style="font-family:var(--fd);font-size:14px;color:var(--dark);text-align:center;padding:0 10px;line-height:1.3">SMOKE AND COCONUT</strong></div></div>
+        <div class="pc-info"><div class="pc-name" style="color:var(--light)">SMOKE AND COCONUT</div>
+        <div class="pc-sub" style="color:var(--blush)">RM138</div></div></div>
+      <div class="pc" style="opacity:.68;pointer-events:none;flex:0 0 240px;scroll-snap-align:start">
+        <div class="pc-img"><div class="pc-img-bg" style="background:linear-gradient(145deg,#f0e8d0,#c8a860)"></div>
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(250,247,242,.86);z-index:2;gap:4px">
+        <span style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--light)">Coming Soon</span>
+        <strong style="font-family:var(--fd);font-size:14px;color:var(--dark);text-align:center;padding:0 10px;line-height:1.3">LA BRULEE CHEESECAKE</strong></div></div>
+        <div class="pc-info"><div class="pc-name" style="color:var(--light)">LA BRULEE CHEESECAKE</div>
+        <div class="pc-sub" style="color:var(--blush)">RM138</div></div></div>
+    </div>
+  </div>
+  <div class="chapter-divider"></div>
+<div class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-left">
+        <span class="chapter-icon">&#127861;</span>
+        <span class="chapter-name">Season's Story</span>
+        <span class="chapter-mood">These cakes exist for a reason. They are here now. Then they are gone.</span>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button class="c-btn" onclick="scrollCar(this,-1)">&#8592;</button>
+        <button class="c-btn" onclick="scrollCar(this,1)">&#8594;</button>
+      </div>
+    </div>
+    <div class="chapter-grid">
+      <div class="pc" style="opacity:.68;pointer-events:none;flex:0 0 240px;scroll-snap-align:start">
+        <div class="pc-img"><div class="pc-img-bg" style="background:linear-gradient(145deg,#f8d8e8,#e090b0)"></div>
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(250,247,242,.86);z-index:2;gap:4px">
+        <span style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--light)">Coming Soon</span>
+        <strong style="font-family:var(--fd);font-size:14px;color:var(--dark);text-align:center;padding:0 10px;line-height:1.3">SAKURA LYCHEE CAKE</strong></div></div>
+        <div class="pc-info"><div class="pc-name" style="color:var(--light)">SAKURA LYCHEE CAKE</div>
+        <div class="pc-sub" style="color:var(--blush)">RM168</div></div></div>
+      <a href="#" class="pc" data-order="uji-matcha" style="flex:0 0 240px;scroll-snap-align:start">
+        <div class="pc-img" style="position:relative"><img src="https://res.cloudinary.com/drsb3bbt7/image/upload/v1779184017/chatgpt-image-apr-4-2026-12-13-49-am-69cfe76e0679f_wn5jjk.png" alt="UJI MATCHA MONT BLANC"><div class="pc-img-bg" style="background:linear-gradient(145deg,#8fb870,#3d6029)"></div><div class="pc-badges"><span class="badge b-season">&#127861; Seasonal</span></div></div>
+        <div class="pc-info"><div class="pc-name">UJI MATCHA MONT BLANC</div>
+        <div class="pc-sub">Real Uji matcha, seasonal commitment...</div>
+        <div class="pc-foot"><div class="pc-foot-row"><span class="pc-price">RM148</span><span class="pc-cta">Order &#8594;</span></div>
+        <button class="btn-detail" onclick="event.preventDefault();event.stopPropagation();openDet('uji-matcha')">View Details</button>
+        </div></div></a>
+    </div>
+  </div>
+  <div class="chapter-divider"></div>
+</div>
 </div>
 
 <!-- ====================================================
@@ -1116,28 +1334,48 @@ footer{background:var(--dark);color:rgba(255,255,255,.52);padding:52px 5% 28px}
 </a>
 
 
-<!-- CAKE DETAIL MODAL -->
+<!-- CAKE DETAIL MODAL — Product Page Style -->
 <div class="detail-overlay" id="detailOverlay">
   <div class="detail-modal">
-    <div class="dm-img">
-      <img id="dmImg" src="" alt="" style="display:none">
-      <div class="dm-img-bg" id="dmBg"></div>
-      <button class="dm-close-btn" id="dmClose">&#x2715;</button>
-      <span class="dm-status-badge" id="dmBadge"></span>
-    </div>
-    <div class="dm-body">
-      <div class="dm-chapter" id="dmChapter"></div>
-      <div class="dm-name" id="dmName"></div>
-      <div class="dm-desc" id="dmDesc"></div>
-      <div class="dm-footer">
-        <div><span class="dm-price" id="dmPrice"></span><span class="dm-price-note">7 inch whole cake</span></div>
-        <div class="dm-actions">
+    <div class="dm-layout">
+      <!-- LEFT: Gallery -->
+      <div class="dm-gallery">
+        <button class="dm-close-btn" id="dmClose">&#x2715;</button>
+        <img class="dm-main-img" id="dmMainImg" src="" alt="">
+        <div class="dm-main-bg" id="dmBg"></div>
+        <div class="dm-thumbs" id="dmThumbs"></div>
+      </div>
+      <!-- RIGHT: Info -->
+      <div class="dm-info">
+        <div class="dm-crumb" id="dmCrumb">Shop / Whole Cake / <span id="dmCrumbName">Cake</span></div>
+        <h2 class="dm-name" id="dmName"></h2>
+        <span class="dm-price-tag" id="dmPrice"></span>
+        <div class="dm-badges" id="dmBadges"></div>
+        <div class="dm-subtitle" id="dmSubtitle"></div>
+        <p class="dm-desc" id="dmDesc"></p>
+        <div class="dm-hr"></div>
+        <div class="dm-specs" id="dmSpecs"></div>
+        <div id="dmAllergens" class="dm-detail-row"></div>
+        <div id="dmIngredients" class="dm-detail-row"></div>
+        <div class="dm-hr"></div>
+        <div class="dm-section">Add on &amp; enjoy:</div>
+        <label class="dm-addon-row" id="dmAddon1"><input type="checkbox" id="dmChkCandle"><span class="lbl">Candle</span><span class="amt">+RM2</span></label>
+        <label class="dm-addon-row" id="dmAddon2"><input type="checkbox" id="dmChkTopper"><span class="lbl">Birthday Topper</span><span class="amt">+RM3</span></label>
+        <div class="dm-qty-area">
+          <div class="dm-section" style="margin-bottom:6px">Quantity</div>
           <div class="dm-qty-wrap">
             <button class="dm-qty-btn" id="dmMinus">&#8722;</button>
             <span class="dm-qty-val" id="dmQty">1</span>
             <button class="dm-qty-btn" id="dmPlus">&#43;</button>
           </div>
+        </div>
+        <div class="dm-total-row">
+          <span class="dm-total-lbl">Total</span>
+          <span class="dm-total-amt" id="dmTotal">RM138</span>
+        </div>
+        <div class="dm-btn-row">
           <button class="dm-order-btn" id="dmOrderBtn">Order Now</button>
+          <a href="https://wa.me/60123771639" target="_blank" class="dm-wa-btn">WhatsApp</a>
         </div>
       </div>
     </div>
@@ -1260,7 +1498,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Save the file on GitHub → website updates in 30 seconds.
 // ============================================================
 
-var SITE = {
+window.SITE = {
 
   // ── CONTACT & SOCIAL ────────────────────────────────────────
   whatsapp:  '60123771639',
@@ -1919,8 +2157,8 @@ var SITE = {
     document.querySelectorAll('.reveal:not(.visible)').forEach(function(el) { ro.observe(el); });
   }
 
-  /* === DETAIL MODAL === */
-  var _dk = null, _dq = 1;
+  /* === DETAIL MODAL — Product Page === */
+  var _dk = null, _dq = 1, _dPrice = 0;
 
   window.openDet = function(key) {
     var cake = null;
@@ -1929,39 +2167,112 @@ var SITE = {
     }
     if (!cake) cake = P[key];
     if (!cake) return;
-    _dk = key; _dq = 1;
-    var img=g('dmImg'),bg=g('dmBg'),badge=g('dmBadge');
-    var ch=g('dmChapter'),nm=g('dmName'),dsc=g('dmDesc');
-    var pr=g('dmPrice'),qt=g('dmQty'),ob=g('dmOrderBtn');
-    if(img){img.src=cake.img||'';img.style.display=cake.img?'block':'none';}
-    if(bg) bg.style.background=cake.bg||'';
-    if(badge){
-      var s=cake.status||'available';
-      badge.textContent=s==='seasonal'?'Seasonal':s==='coming-soon'?'Coming Soon':'Available';
-      badge.style.background=s==='seasonal'?'#b5604a':s==='coming-soon'?'rgba(30,26,24,.6)':'#6b8050';
-    }
-    if(ch)  ch.textContent=(cake.chapter||'').toUpperCase().replace('-',' ');
-    if(nm)  nm.textContent=cake.name||'';
-    if(dsc) dsc.textContent=cake.desc||cake.sub||'';
-    if(pr)  pr.textContent='RM'+(cake.price||'');
-    if(qt)  qt.textContent='1';
-    if(ob){ob.disabled=cake.status==='coming-soon';ob.textContent=cake.status==='coming-soon'?'Coming Soon':'Order Now';}
-    g('detailOverlay').classList.add('active');
-    document.body.style.overflow='hidden';
-  }
+    _dk = key; _dq = 1; _dPrice = cake.price;
 
-  window.closeDet = function(){g('detailOverlay').classList.remove('active');document.body.style.overflow='';}
+    // Main image
+    var mainImg = g('dmMainImg'), bg = g('dmBg');
+    if (mainImg) { mainImg.src = cake.img || ''; mainImg.style.display = cake.img ? 'block' : 'none'; }
+    if (bg) bg.style.background = cake.bg || '';
+
+    // Thumbnail gallery (supports multiple images per cake)
+    var thumbs = g('dmThumbs');
+    var imgs = cake.images || (cake.img ? [cake.img] : []);
+    if (thumbs) {
+      if (imgs.length > 1) {
+        var th = '';
+        imgs.forEach(function(src, idx) {
+          th += '<img class="dm-thumb' + (idx===0?' active':'') + '" src="' + src + '" onclick="dmSwapImg(this,\'' + src + '\')" alt="">';
+        });
+        thumbs.innerHTML = th;
+        thumbs.style.display = 'flex';
+      } else {
+        thumbs.innerHTML = '';
+        thumbs.style.display = 'none';
+      }
+    }
+
+    // Info fields
+    if (g('dmCrumbName')) g('dmCrumbName').textContent = cake.name;
+    if (g('dmName'))  g('dmName').textContent = cake.name;
+    if (g('dmPrice')) g('dmPrice').textContent = 'RM ' + cake.price + '.00';
+
+    // Badges
+    var bdg = g('dmBadges');
+    if (bdg) {
+      var bh = '<span class="dm-bdg dm-bdg-halal">Halal Certified</span>';
+      if (cake.status === 'seasonal') bh += '<span class="dm-bdg dm-bdg-season">Season Limited</span>';
+      bdg.innerHTML = bh;
+    }
+
+    // Subtitle + Description
+    if (g('dmSubtitle')) g('dmSubtitle').textContent = cake.subtitle || '';
+    if (g('dmDesc')) g('dmDesc').textContent = cake.desc || '';
+
+    // Specs
+    var specs = g('dmSpecs');
+    if (specs) {
+      var sz = cake.size || '7inch', sh = cake.shape || 'Round', sv = cake.serves || '8-10 Serving';
+      specs.innerHTML = '<div class="dm-spec"><strong>Size</strong><span>' + sz + '</span></div>' +
+        '<div class="dm-spec"><strong>Shape</strong><span>' + sh + '</span></div>' +
+        '<div class="dm-spec"><strong>Serves</strong><span>' + sv + '</span></div>';
+    }
+
+    // Allergens + Ingredients
+    if (g('dmAllergens')) {
+      var al = cake.allergens || 'Contains dairy, egg, milk';
+      g('dmAllergens').innerHTML = '<b>Allergens: </b>' + al;
+    }
+    if (g('dmIngredients')) {
+      var ing = cake.ingredients || 'Whipping cream, Bean paste, Sugar, Flour, Eggs, Milk, Salt';
+      g('dmIngredients').innerHTML = '<b>Ingredients: </b>' + ing;
+    }
+
+    // Reset
+    if (g('dmChkCandle')) g('dmChkCandle').checked = false;
+    if (g('dmChkTopper')) g('dmChkTopper').checked = false;
+    if (g('dmQty')) g('dmQty').textContent = '1';
+    dmUpdateTotal();
+
+    var ob = g('dmOrderBtn');
+    if (ob) { ob.disabled = cake.status === 'coming-soon'; ob.textContent = cake.status === 'coming-soon' ? 'Coming Soon' : 'Order Now'; }
+
+    g('detailOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeDet = function() {
+    g('detailOverlay').classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  window.dmSwapImg = function(thumb, src) {
+    if (g('dmMainImg')) g('dmMainImg').src = src;
+    document.querySelectorAll('.dm-thumb').forEach(function(t) { t.classList.remove('active'); });
+    thumb.classList.add('active');
+  };
+
+  function dmUpdateTotal() {
+    var addons = 0;
+    if (g('dmChkCandle') && g('dmChkCandle').checked) addons += 2;
+    if (g('dmChkTopper') && g('dmChkTopper').checked) addons += 3;
+    var total = (_dPrice + addons) * _dq;
+    if (g('dmTotal')) g('dmTotal').textContent = 'RM ' + total.toFixed(2);
+  }
 
   (function(){
     var c=g('dmClose'),ov=g('detailOverlay'),mi=g('dmMinus'),pl=g('dmPlus'),ob=g('dmOrderBtn');
+    var cc=g('dmChkCandle'),ct=g('dmChkTopper');
     if(c)  c.addEventListener('click',closeDet);
     if(ov) ov.addEventListener('click',function(e){if(e.target===this)closeDet();});
-    if(mi) mi.addEventListener('click',function(){if(_dq>1){_dq--;g('dmQty').textContent=_dq;}});
-    if(pl) pl.addEventListener('click',function(){_dq++;g('dmQty').textContent=_dq;});
+    if(mi) mi.addEventListener('click',function(){if(_dq>1){_dq--;g('dmQty').textContent=_dq;dmUpdateTotal();}});
+    if(pl) pl.addEventListener('click',function(){_dq++;g('dmQty').textContent=_dq;dmUpdateTotal();});
+    if(cc) cc.addEventListener('change', dmUpdateTotal);
+    if(ct) ct.addEventListener('change', dmUpdateTotal);
     if(ob) ob.addEventListener('click',function(){if(!_dk)return;closeDet();openCheckout(_dk);});
   })();
 
-  buildCakeMenu();
+
+  // buildCakeMenu() not needed — cards are static HTML
 
 }); // DOMContentLoaded
 </script>
